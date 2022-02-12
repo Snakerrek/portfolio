@@ -20,11 +20,6 @@ let listItems: { delayID: number; icon: React.ReactNode; text: string }[] = [
   { delayID: 4, icon: <MdOutlineConnectWithoutContact />, text: "Contact" },
 ];
 
-// function getWindowWidth() {
-//   const { innerWidth: width, innerHeight: height } = window;
-//   return width;
-// }
-
 const Navbar: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {

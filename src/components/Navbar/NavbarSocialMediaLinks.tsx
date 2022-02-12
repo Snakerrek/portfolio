@@ -6,7 +6,7 @@ import { NavbarListItemIcon } from "./NavbarListItemLink.styles";
 
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
-const NavbarSocialMediaLinks = () => {
+const NavbarSocialMediaLinks: React.FC = () => {
   return (
     <NavbarListItem delayID={5}>
       <NavbarListItemLink href="/#">
