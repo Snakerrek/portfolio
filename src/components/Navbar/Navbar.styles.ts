@@ -4,6 +4,7 @@ export const NavigationBar = styled.nav`
   position: fixed;
   background-color: var(--grey);
   transition: 200ms ease;
+  z-index: 100;
 
   @media only screen and (min-width: 600px) {
     top: 0;

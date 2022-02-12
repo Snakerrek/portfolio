@@ -39,10 +39,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    margin-left: 5rem;
+    padding-left: 5rem;
     @media only screen and (max-width: 600px) {
-      margin-bottom: 5rem;
-      margin-left: 0;
+      padding-bottom: 5rem;
+      padding-left: 0;
     }
   }
 
