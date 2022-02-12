@@ -2,12 +2,14 @@ import React from "react";
 import { GlobalStyle } from "./GlobalStyle";
 
 import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar />
       <main>
+        <Home />
         <h1>Test</h1>
         <h2>Test</h2>
         <p>
