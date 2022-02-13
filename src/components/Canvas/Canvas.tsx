@@ -100,6 +100,12 @@ class FlowFieldEffect {
     }
 
     flowFieldAnimation = requestAnimationFrame(this.animate.bind(this));
+    console.log(flowFieldAnimation);
+  }
+  public updateCanvas(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+    this.ctx.strokeStyle = this.gradient;
   }
 }
 
@@ -121,11 +127,9 @@ const Canvas = () => {
     flowField.animate(0);
 
     window.addEventListener("resize", function () {
-      cancelAnimationFrame(flowFieldAnimation);
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      flowField = new FlowFieldEffect(ctx, canvas.width, canvas.height);
-      flowField.animate(0);
+      flowField.updateCanvas(window.innerWidth, window.innerHeight);
     });
 
     return () => {
