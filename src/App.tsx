@@ -8,8 +8,8 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar />
+      <Home />
       <main>
-        <Home />
         <h1>Test</h1>
         <h2>Test</h2>
         <p>

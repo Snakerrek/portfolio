@@ -4,6 +4,12 @@ export const TitleWrapper = styled.div`
   position: absolute;
   top: 250px;
 
+  padding-left: 5rem;
+  @media only screen and (max-width: 600px) {
+    padding-bottom: 5rem;
+    padding-left: 0;
+  }
+
   p {
     margin: 0 1rem;
   }
@@ -24,4 +30,8 @@ export const TitleWrapper = styled.div`
       font-size: 1.1rem;
     }
   }
+`;
+
+export const HomeWrap = styled.div`
+  position: relative;
 `;
