@@ -2,49 +2,65 @@ import React, { useRef, useEffect } from "react";
 
 import { CanvasDiv } from "./Canvas.styles";
 
-interface Mouse {
+import { isOnMobile, FlowFieldEffectConfig } from "../../helpers";
+
+const mouse: {
   x: number;
   y: number;
-}
-
-const mouse: Mouse = {
+} = {
   x: 0,
   y: 0,
 };
 
-window.addEventListener("mousemove", function (e: MouseEvent) {
-  mouse.x = e.pageX;
-  mouse.y = e.pageY;
-});
-
-let flowFieldAnimation: number;
+const FFEconfig: FlowFieldEffectConfig = {
+  framesPerSecond: 60,
+  cellSize: 20,
+  lineWidth: 1.5,
+  vr: 0.02,
+  gradientColors: [
+    { offset: 0.1, color: "#F92CB0" },
+    { offset: 0.3, color: "#1E3BFE" },
+    { offset: 0.5, color: "#3EDFFF" },
+    { offset: 0.7, color: "#7DFDFC" },
+    { offset: 0.9, color: "#FFFFFF" },
+  ],
+  sizeOfMouse: 25,
+  lineLength: { min: 5, max: 60 },
+  angleMultiplier: { x: 0.005, y: 0.005 },
+  radiusClampValues: { min: -6, max: 6 },
+};
 
 class FlowFieldEffect {
+  private config: FlowFieldEffectConfig;
   private ctx: any;
   private width: number;
   private height: number;
   private lastTime: number;
   private interval: number;
   private timer: number;
-  private cellSize: number;
   private gradient: CanvasGradient | undefined;
   private radius: number;
-  private vr: number;
 
-  constructor(ctx: any, width: number, height: number) {
+  constructor(
+    config: FlowFieldEffectConfig,
+    ctx: any,
+    width: number,
+    height: number
+  ) {
+    this.config = config;
     this.ctx = ctx;
-    this.ctx.strokeStyle = "white";
-    this.ctx.lineWidth = 1;
+    this.ctx.lineWidth = this.config.lineWidth;
+
     this.width = width;
     this.height = height;
+
     this.lastTime = 0;
-    this.interval = 1000 / 60; // 60frames/s
+    this.interval = 1000 / this.config.framesPerSecond;
     this.timer = 0;
-    this.cellSize = 15;
+
     this.createGradient();
     this.ctx.strokeStyle = this.gradient;
     this.radius = 0;
-    this.vr = 0.03; // velocity of radius
   }
   private createGradient() {
     this.gradient = this.ctx.createLinearGradient(
@@ -53,29 +69,64 @@ class FlowFieldEffect {
       this.width,
       this.height
     );
-    if (this.gradient) {
-      this.gradient.addColorStop(0.1, "#ff5c33");
-      this.gradient.addColorStop(0.2, "#ff66b3");
-      this.gradient.addColorStop(0.4, "#ccccff");
-      this.gradient.addColorStop(0.6, "#b3ffff");
-      this.gradient.addColorStop(0.8, "#80ff80");
-      this.gradient.addColorStop(0.9, "#ffff33");
+    this.config.gradientColors.map((colorStop) => {
+      return this.gradient?.addColorStop(colorStop.offset, colorStop.color);
+    });
+  }
+
+  private calculateLength(positionX: number, positionY: number) {
+    let length: number;
+
+    if (!isOnMobile()) {
+      const dx: number = mouse.x - positionX;
+      const dy: number = mouse.y - positionY;
+      const minDistance: number = this.config.lineLength.min * 10000;
+      const maxDistance: number = this.config.lineLength.max * 10000;
+      const ms: number = this.config.sizeOfMouse;
+      let distance = dx * dx * ms + dy * dy * ms;
+      if (distance > maxDistance) distance = maxDistance;
+      else if (distance < minDistance) distance = minDistance;
+      length = distance * 0.0001;
+    } else {
+      length = this.config.lineLength.max;
     }
+    return length;
   }
 
   private drawLine(angle: number, x: number, y: number) {
-    let positionX = x;
-    let positionY = y;
-    let dx = mouse.x - positionX;
-    let dy = mouse.y - positionY;
-    let distance = dx * dx * 25 + dy * dy * 25;
-    if (distance > 500000) distance = 500000;
-    else if (distance < 50000) distance = 50000;
-    let length = distance * 0.0001;
+    const length = this.calculateLength(x, y);
     this.ctx.beginPath();
     this.ctx.moveTo(x, y);
     this.ctx.lineTo(x + Math.cos(angle) * length, y + Math.sin(angle) * length);
     this.ctx.stroke();
+  }
+
+  private drawGradient() {
+    const angleXmult = this.config.angleMultiplier.x;
+    const angleYmult = this.config.angleMultiplier.y;
+
+    for (let y = 0; y < this.height; y += this.config.cellSize) {
+      for (let x = 0; x < this.width; x += this.config.cellSize) {
+        const angle =
+          (Math.cos(x * angleXmult) + Math.sin(y * angleYmult)) * this.radius;
+        this.drawLine(angle, x, y);
+      }
+    }
+  }
+
+  private updateRadius() {
+    this.radius += this.config.vr;
+    if (
+      this.radius > this.config.radiusClampValues.max ||
+      this.radius < this.config.radiusClampValues.min
+    )
+      this.config.vr *= -1;
+  }
+
+  public updateCanvas(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+    this.ctx.strokeStyle = this.gradient;
   }
 
   animate(timeStamp: DOMHighResTimeStamp) {
@@ -84,16 +135,8 @@ class FlowFieldEffect {
     if (this.timer > this.interval) {
       this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-      this.radius += this.vr;
-      if (this.radius > 5 || this.radius < -5) this.vr *= -1;
-
-      for (let y = 0; y < this.height; y += this.cellSize) {
-        for (let x = 0; x < this.width; x += this.cellSize) {
-          const angle =
-            (Math.cos(x * 0.0125) + Math.sin(y * 0.0125)) * this.radius;
-          this.drawLine(angle, x, y);
-        }
-      }
+      this.updateRadius();
+      this.drawGradient();
       this.timer = 0;
     } else {
       this.timer += deltaTime;
@@ -101,16 +144,19 @@ class FlowFieldEffect {
 
     flowFieldAnimation = requestAnimationFrame(this.animate.bind(this));
   }
-  public updateCanvas(width: number, height: number) {
-    this.width = width;
-    this.height = height;
-    this.ctx.strokeStyle = this.gradient;
-  }
+}
+
+let flowFieldAnimation: number;
+
+if (!isOnMobile()) {
+  window.addEventListener("mousemove", function (e: MouseEvent) {
+    mouse.x = e.pageX;
+    mouse.y = e.pageY;
+  });
 }
 
 const Canvas = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  console.log(canvasRef);
 
   useEffect(() => {
     const canvas: HTMLCanvasElement | null = canvasRef.current;
@@ -121,9 +167,12 @@ const Canvas = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    let flowField: FlowFieldEffect;
-
-    flowField = new FlowFieldEffect(ctx, canvas.width, canvas.height);
+    let flowField: FlowFieldEffect = new FlowFieldEffect(
+      FFEconfig,
+      ctx,
+      canvas.width,
+      canvas.height
+    );
     flowField.animate(0);
 
     window.addEventListener("resize", function () {
@@ -141,6 +190,3 @@ const Canvas = () => {
 };
 
 export default Canvas;
-
-//TODO: Refactorisation, maybe moving types from this file also parametrize it
-//TODO: disable screen resize adaptation. (maybe check if is possible to detect twist)
