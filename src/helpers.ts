@@ -10,6 +10,14 @@ export const isOnMobile = () => {
   }
 };
 
+export const splitStringToArrayOfChars = (text: string) => {
+  let characters: string[] = [];
+  for (let i = 0; i < text.length; i++) {
+    characters.push(text[i]);
+  }
+  return characters;
+};
+
 export interface FlowFieldEffectConfig {
   framesPerSecond: number;
   cellSize: number; // >10 for best performance
