@@ -13,8 +13,8 @@ const mouse: Mouse = {
 };
 
 window.addEventListener("mousemove", function (e: MouseEvent) {
-  mouse.x = e.x;
-  mouse.y = e.y;
+  mouse.x = e.pageX;
+  mouse.y = e.pageY;
 });
 
 let flowFieldAnimation: number;
@@ -100,7 +100,6 @@ class FlowFieldEffect {
     }
 
     flowFieldAnimation = requestAnimationFrame(this.animate.bind(this));
-    console.log(flowFieldAnimation);
   }
   public updateCanvas(width: number, height: number) {
     this.width = width;
@@ -111,6 +110,7 @@ class FlowFieldEffect {
 
 const Canvas = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  console.log(canvasRef);
 
   useEffect(() => {
     const canvas: HTMLCanvasElement | null = canvasRef.current;
@@ -141,3 +141,6 @@ const Canvas = () => {
 };
 
 export default Canvas;
+
+//TODO: Refactorisation, maybe moving types from this file also parametrize it
+//TODO: disable screen resize adaptation. (maybe check if is possible to detect twist)
