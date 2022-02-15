@@ -2,9 +2,9 @@ import React from "react";
 
 import { AboutWrapper, Content } from "./About.styles";
 
-type Props = {};
+import AnimatedObject3D from "../AnimatedObject3D/AnimatedObject3D";
 
-const About = (props: Props) => {
+const About = () => {
   return (
     <AboutWrapper>
       <Content>
@@ -22,26 +22,10 @@ const About = (props: Props) => {
           non. Cras vitae bibendum sem. Nullam malesuada orci vel sapien
           hendrerit molestie. Integer interdum dui a dolor condimentum sodales.
           Curabitur ipsum lectus, pellentesque vel est in, laoreet tincidunt
-          lectus. Duis ac lectus in nibh pharetra dapibus. Vestibulum ante ipsum
-          primis in faucibus orci luctus et ultrices posuere cubilia curae;
-          Integer et tellus pretium, malesuada ligula fringilla, lobortis lacus.
-          Donec gravida, justo non sagittis blandit, ligula leo posuere velit,
-          maximus pharetra dolor elit sed mi. Phasellus vel dolor tristique,
-          ornare orci sollicitudin, vestibulum nunc. Donec sit amet convallis
-          sem, nec blandit massa. Quisque vulputate purus sed tellus ullamcorper
-          consectetur. Sed auctor varius accumsan. Sed quis sem at magna auctor
-          sodales. Aliquam at porta purus. Vivamus porta luctus nisi, ac
-          vulputate dolor congue quis. Aliquam eu pellentesque leo.
+          lectus. Duis ac lectus in nibh pharetra dapibus.
         </p>
       </Content>
-      <Content>
-        <img
-          src="https://content.techgig.com/photo/77087595/Guide-How-to-build-career-as-a-programmer-without-college-degree.jpg"
-          alt="tempIMG"
-          width="100%"
-          height="auto"
-        ></img>
-      </Content>
+      <AnimatedObject3D />
     </AboutWrapper>
   );
 };
