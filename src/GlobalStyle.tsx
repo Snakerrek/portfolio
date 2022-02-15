@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     --grey: #262626;
     --darkGrey: #1c1c1c;
     --black: #0c0c0c;
-    --lightBlue: #1F44FF; 
+    --lightBlue: #45FDF5; 
     --mediumBlue: #1C20FF;
     --darkBlue: #1C11A4;
     
@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
     background: #1a1a1f;
   }
   body::-webkit-scrollbar-thumb {
-    background: var(--mediumBlue);
+    background: var(--lightBlue);
     border-radius: 5px;
   }
 
