@@ -10,6 +10,7 @@ const AnimatedObject3D = () => {
   useEffect(() => {
     const canvas: HTMLCanvasElement | null = canvasRef.current;
     if (!canvas) return;
+
     const scene = new THREE.Scene();
     const loader = new GLTFLoader();
     let model: THREE.Group;
@@ -17,7 +18,7 @@ const AnimatedObject3D = () => {
       "/wraith.glb",
       (glb) => {
         model = glb.scene;
-        model.scale.set(0.025, 0.025, 0.025);
+        model.scale.set(0.035, 0.035, 0.035);
         scene.add(model);
         console.log("loaded");
       },
@@ -58,13 +59,29 @@ const AnimatedObject3D = () => {
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.shadowMap.enabled = true;
+    renderer.setClearColor(0x0c0c0c);
     renderer.render(scene, camera);
+
+    let scalingValue = -0.0001;
 
     const animate = (timeStamp: DOMHighResTimeStamp) => {
       const deltaTime = timeStamp - lastTime;
       lastTime = timeStamp;
       if (timer > interval) {
-        camera.rotation.y += 0.001;
+        if (model) {
+          model.rotateY(0.02);
+          let rotation: THREE.Euler = model.rotation;
+          if (rotation.y < 0.02 && rotation.y > 0) {
+            scalingValue *= -1;
+          }
+
+          let scale: THREE.Vector3 = model.scale;
+          model.scale.set(
+            scale.x + scalingValue,
+            scale.y + scalingValue,
+            scale.z + scalingValue
+          );
+        }
         renderer.render(scene, camera);
         timer = 0;
       } else {
