@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AboutWrapper = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

@@ -104,7 +104,7 @@ const AnimatedObject3D: React.FC<Props> = ({
     return () => {
       cancelAnimationFrame(animationFrame);
     };
-  }, []);
+  });
 
   return <Canvas ref={canvasRef}></Canvas>;
 };
