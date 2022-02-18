@@ -4,7 +4,17 @@ import { Canvas } from "./AnimatedObject3D.styles";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-const AnimatedObject3D = () => {
+interface Props {
+  modelPath: string;
+  canvasSize: { x: number; y: number };
+  modelScale: { x: number; y: number; z: number };
+}
+
+const AnimatedObject3D: React.FC<Props> = ({
+  modelPath,
+  canvasSize,
+  modelScale,
+}) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -15,10 +25,10 @@ const AnimatedObject3D = () => {
     const loader = new GLTFLoader();
     let model: THREE.Group;
     loader.load(
-      "/wraith.glb",
+      modelPath,
       (glb) => {
         model = glb.scene;
-        model.scale.set(0.035, 0.035, 0.035);
+        model.scale.set(modelScale.x, modelScale.y, modelScale.z);
         scene.add(model);
         console.log("loaded");
       },
@@ -39,8 +49,8 @@ const AnimatedObject3D = () => {
     let timer = 0;
 
     const sizes = {
-      width: 500,
-      height: 500,
+      width: canvasSize.x,
+      height: canvasSize.y,
     };
 
     const camera = new THREE.PerspectiveCamera(

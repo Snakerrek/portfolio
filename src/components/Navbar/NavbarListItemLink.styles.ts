@@ -16,7 +16,7 @@ export const NavbarListItemLink = styled.a`
     filter: grayscale(0%) opacity(1);
     background: var(--darkGrey);
     div {
-      color: var(--mediumBlue);
+      color: var(--lightBlue);
     }
   }
 

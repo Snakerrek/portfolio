@@ -25,7 +25,11 @@ const About = () => {
           lectus. Duis ac lectus in nibh pharetra dapibus.
         </p>
       </Content>
-      <AnimatedObject3D />
+      <AnimatedObject3D
+        modelPath={"/wraith.glb"}
+        canvasSize={{ x: 500, y: 500 }}
+        modelScale={{ x: 0.035, y: 0.035, z: 0.035 }}
+      />
     </AboutWrapper>
   );
 };
