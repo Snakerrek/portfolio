@@ -30,7 +30,6 @@ const AnimatedObject3D: React.FC<Props> = ({
         model = glb.scene;
         model.scale.set(modelScale.x, modelScale.y, modelScale.z);
         scene.add(model);
-        console.log("loaded");
       },
       (xhr) => {},
       (error) => {

@@ -2,11 +2,9 @@ import styled from "styled-components";
 
 export const FilterContainer = styled.div`
   display: flex;
-  flex-direction: column;
-
-  @media screen and (max-width: 600px) {
-    flex-direction: row;
-  }
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 interface ButtonProps {

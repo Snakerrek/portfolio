@@ -7,19 +7,12 @@ export const Wrapper = styled.div`
 
   @media screen and (min-width: 601px) {
     & {
-      flex-direction: row;
       min-height: 100vh;
     }
   }
 `;
 
 export const TitleHolder = styled.div`
-  writing-mode: vertical-lr;
-  text-align: center;
+  writing-mode: horizontal-tb;
   color: var(--lightBlue);
-  @media screen and (max-width: 600px) {
-    & {
-      writing-mode: horizontal-tb;
-    }
-  }
 `;
