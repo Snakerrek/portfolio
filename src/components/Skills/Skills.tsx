@@ -1,8 +1,9 @@
 import React from "react";
 
-import { SkillsWrapper, SkillsHolder, TextHolder } from "./Skills.styles";
+import { SkillsHolder } from "./Skills.styles";
 
 import SkillCard from "./SkillCard";
+import SectionWrapper from "../SectionWrapper/SectionWrapper";
 
 const skillsData: {
   skillName: string;
@@ -46,23 +47,22 @@ const skillsData: {
 
 const Skills = () => {
   return (
-    <SkillsWrapper>
-      <TextHolder>
-        <h2>My skills</h2>
-      </TextHolder>
-      <SkillsHolder>
-        {skillsData.map((skill, index) => {
-          return (
-            <SkillCard
-              key={index}
-              skillName={skill.skillName}
-              backgroundColors={skill.backgroundColors}
-            />
-          );
-        })}
-      </SkillsHolder>
-      {/* <h2>My skills</h2> */}
-    </SkillsWrapper>
+    <SectionWrapper
+      title={"My skills"}
+      children={
+        <SkillsHolder>
+          {skillsData.map((skill, index) => {
+            return (
+              <SkillCard
+                key={index}
+                skillName={skill.skillName}
+                backgroundColors={skill.backgroundColors}
+              />
+            );
+          })}
+        </SkillsHolder>
+      }
+    ></SectionWrapper>
   );
 };
 

@@ -176,6 +176,7 @@ const Canvas = () => {
     flowField.animate(0);
 
     window.addEventListener("resize", function () {
+      if (isOnMobile()) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       flowField.updateCanvas(window.innerWidth, window.innerHeight);
