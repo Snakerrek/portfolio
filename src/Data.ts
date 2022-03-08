@@ -181,7 +181,7 @@ export const projectsData: projectsDataInterface[] = [
     projectImgPath: "password-generator",
     projectLiveLink: "https://snakerrek.github.io/password-generator/",
     projectGitHubLink: "https://github.com/Snakerrek/password-generator",
-    projectTitle: "Password generator / checker",
+    projectTitle: "Password generator",
     projectDescription:
       "The application generates passwords according to the parameters set by the user and can also check the password strength.",
     projectTechnology: ["html", "css", "js"],

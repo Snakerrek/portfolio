@@ -19,10 +19,12 @@ const ProjectCard = ({
   return (
     <ProjectCardWrapper>
       <h3>{projectTitle}</h3>
-      <ProjectCardImg
-        src={require(`../../assets/projects/${projectImgPath}.png`)}
-        alt={altText}
-      />
+      <div>
+        <ProjectCardImg
+          src={require(`../../assets/projects/${projectImgPath}.png`)}
+          alt={altText}
+        />
+      </div>
       <ProjectTechnologyHolder>
         {projectTechnologyIcons.map((TechIcon, id) => {
           return <TechIcon key={id} />;
