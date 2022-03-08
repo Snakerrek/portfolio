@@ -14,7 +14,7 @@ export const ProjectCardWrapper = styled.div`
   background-image: linear-gradient(
     to right bottom,
     var(--lightBlue),
-    var(--darkBlue)
+    rgba(12, 12, 12, 0.1) 30%
   );
   background-origin: border-box;
 
