@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProjectsWrapper = styled.div`
   width: 100%;
-  padding: 20px 20px 20px 0;
+  padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-column-gap: 1rem;

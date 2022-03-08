@@ -5,59 +5,17 @@ import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import ProjectCard from "./ProjectCard";
 import ProjectFilter from "./ProjectFilter";
 
-const projectsData: {
-  projectTitle: string;
-  projectDescription: string;
-  projectTechnology: string[];
-}[] = [
-  {
-    projectTitle: "Project 1",
-    projectDescription: "Some kind of description",
-    projectTechnology: ["js", "html", "css"],
-  },
-  {
-    projectTitle: "Project 2",
-    projectDescription: "Some kind of description 2",
-    projectTechnology: ["js", "html", "css"],
-  },
-  {
-    projectTitle: "Project 3",
-    projectDescription: "Some kind of description 3",
-    projectTechnology: ["js", "html", "css"],
-  },
-  {
-    projectTitle: "Project 1",
-    projectDescription: "Some kind of description",
-    projectTechnology: ["html", "css"],
-  },
-  {
-    projectTitle: "Project 2",
-    projectDescription: "Some kind of description 2",
-    projectTechnology: ["js", "html"],
-  },
-  {
-    projectTitle: "Project 3",
-    projectDescription: "Some kind of description 3",
-    projectTechnology: ["js", "css"],
-  },
-  {
-    projectTitle: "Project 1",
-    projectDescription: "Some kind of description",
-    projectTechnology: ["js", "html", "css"],
-  },
-  {
-    projectTitle: "Project 2",
-    projectDescription: "Some kind of description 2",
-    projectTechnology: ["js", "html", "css"],
-  },
-  {
-    projectTitle: "Project 3",
-    projectDescription: "Some kind of description 3",
-    projectTechnology: ["js", "html", "css"],
-  },
-];
+import { projectsDataInterface } from "../../interfaces";
 
-const Projects = () => {
+type Props = {
+  technologyNamesForFilter: string[];
+  projectsData: projectsDataInterface[];
+};
+
+const Projects = ({
+  technologyNamesForFilter,
+  projectsData,
+}: Props): JSX.Element => {
   const projects = projectsData;
   const [filteredProjects, setFilteredProjects] = useState(projectsData);
   const [activeTechnology, setActiveTechnology] = useState("all");
@@ -70,10 +28,11 @@ const Projects = () => {
           setFilteredProjects={setFilteredProjects}
           activeTechnology={activeTechnology}
           setActiveTechnology={setActiveTechnology}
+          technologyNamesForFilter={technologyNamesForFilter}
         />
         <ProjectsWrapper>
           {filteredProjects.map((project, id) => {
-            return <ProjectCard key={id} project={project} />;
+            return <ProjectCard key={id} {...project} />;
           })}
         </ProjectsWrapper>
       </>

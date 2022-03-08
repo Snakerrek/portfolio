@@ -2,15 +2,12 @@ import React from "react";
 
 import { Card } from "./SkillCard.styles";
 
-interface Props {
-  skillName: string;
-  backgroundColors: {
-    bottom: string;
-    top: string;
-  };
-}
+import { skillsDataInterface } from "../../interfaces";
 
-const SkillCard: React.FC<Props> = ({ skillName, backgroundColors }) => {
+const SkillCard = ({
+  skillName,
+  backgroundColors,
+}: skillsDataInterface): JSX.Element => {
   return (
     <Card topColor={backgroundColors.top} bottomColor={backgroundColors.bottom}>
       <img

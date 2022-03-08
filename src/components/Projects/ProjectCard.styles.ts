@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProjectCardWrapper = styled.div`
   text-align: center;
-  background: red;
+  background: var(--grey);
 
   h3 {
     margin: 10px;

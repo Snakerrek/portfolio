@@ -4,7 +4,7 @@ import { LetterContainer } from "./Letter.styles";
 
 type Props = { letter: string; delay: number };
 
-const Letter = (props: Props) => {
+const Letter = ({ letter, delay }: Props): JSX.Element => {
   const [animationGoing, setAnimationGoing] = useState<boolean>(false);
 
   const handleAnimationOnMouseEnter = () => {
@@ -16,13 +16,13 @@ const Letter = (props: Props) => {
   return (
     <LetterContainer
       onMouseEnter={handleAnimationOnMouseEnter}
-      delay={props.delay + "ms"}
+      delay={delay + "ms"}
     >
-      {props.letter === " " ? (
+      {letter === " " ? (
         <span className="whiteSpace"> </span>
       ) : (
         <span className={animationGoing ? "letterAnimation" : ""}>
-          {props.letter}
+          {letter}
         </span>
       )}
     </LetterContainer>

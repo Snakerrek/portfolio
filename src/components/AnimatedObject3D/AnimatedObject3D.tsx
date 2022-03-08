@@ -10,11 +10,11 @@ interface Props {
   modelScale: { x: number; y: number; z: number };
 }
 
-const AnimatedObject3D: React.FC<Props> = ({
+const AnimatedObject3D = ({
   modelPath,
   canvasSize,
   modelScale,
-}) => {
+}: Props): JSX.Element => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {

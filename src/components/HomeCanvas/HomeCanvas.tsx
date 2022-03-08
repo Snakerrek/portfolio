@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from "react";
 
-import { CanvasDiv } from "./Canvas.styles";
+import { CanvasDiv } from "./HomeCanvas.styles";
 
-import { isOnMobile, FlowFieldEffectConfig } from "../../helpers";
+import { isOnMobile } from "../../helpers";
+import { FFEconfigInterface } from "../../interfaces";
 
 const mouse: {
   x: number;
@@ -12,26 +13,8 @@ const mouse: {
   y: 0,
 };
 
-const FFEconfig: FlowFieldEffectConfig = {
-  framesPerSecond: 60,
-  cellSize: 20,
-  lineWidth: 1.5,
-  vr: 0.02,
-  gradientColors: [
-    { offset: 0.1, color: "#F92CB0" },
-    { offset: 0.3, color: "#1E3BFE" },
-    { offset: 0.5, color: "#3EDFFF" },
-    { offset: 0.7, color: "#7DFDFC" },
-    { offset: 0.9, color: "#FFFFFF" },
-  ],
-  sizeOfMouse: 25,
-  lineLength: { min: 5, max: 60 },
-  angleMultiplier: { x: 0.005, y: 0.005 },
-  radiusClampValues: { min: -6, max: 6 },
-};
-
 class FlowFieldEffect {
-  private config: FlowFieldEffectConfig;
+  private config: FFEconfigInterface;
   private ctx: any;
   private width: number;
   private height: number;
@@ -42,7 +25,7 @@ class FlowFieldEffect {
   private radius: number;
 
   constructor(
-    config: FlowFieldEffectConfig,
+    config: FFEconfigInterface,
     ctx: any,
     width: number,
     height: number
@@ -155,7 +138,10 @@ if (!isOnMobile()) {
   });
 }
 
-const Canvas = () => {
+type Props = {
+  FFEconfig: FFEconfigInterface;
+};
+const HomeCanvas = ({ FFEconfig }: Props): JSX.Element => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -185,9 +171,9 @@ const Canvas = () => {
     return () => {
       cancelAnimationFrame(flowFieldAnimation);
     };
-  }, []);
+  });
 
   return <CanvasDiv ref={canvasRef} />;
 };
 
-export default Canvas;
+export default HomeCanvas;

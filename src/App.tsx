@@ -1,21 +1,40 @@
 import React from "react";
 import { GlobalStyle } from "./GlobalStyle";
 
+// Components
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 
-const App: React.FC = () => {
+// Data
+import { homeSectionData } from "./Data";
+import { aboutMeSectionData } from "./Data";
+import { technologyNamesForFilter, projectsData } from "./Data";
+import { skillsData } from "./Data";
+
+const App = (): JSX.Element => {
   return (
     <div className="App">
       <Navbar />
-      <Home />
+      <Home
+        homeTextFirstLine={homeSectionData.homeTextFirstLine}
+        homeTextSecondLine={homeSectionData.homeTextSecondLine}
+        delay={homeSectionData.delay}
+        FFEconfig={homeSectionData.FFEconfig}
+      />
       <main>
-        <About />
-        <Skills />
-        <Projects />
+        <About
+          title={aboutMeSectionData.title}
+          aboutMeText={aboutMeSectionData.aboutMeText}
+          object3Dconfig={aboutMeSectionData.object3Dconfig}
+        />
+        <Skills skillsData={skillsData} />
+        <Projects
+          technologyNamesForFilter={technologyNamesForFilter}
+          projectsData={projectsData}
+        />
       </main>
       <GlobalStyle />
     </div>

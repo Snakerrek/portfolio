@@ -20,7 +20,7 @@ let listItems: { delayID: number; icon: React.ReactNode; text: string }[] = [
   { delayID: 4, icon: <MdOutlineConnectWithoutContact />, text: "Contact" },
 ];
 
-const Navbar: React.FC = () => {
+const Navbar = (): JSX.Element => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {

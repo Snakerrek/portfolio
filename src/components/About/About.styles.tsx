@@ -14,6 +14,8 @@ export const TextHolder = styled.div`
   width: 400px;
   padding: 1rem;
   flex: 1 1 auto;
+  text-align: justify;
+  text-justify: inter-word;
   h2 {
     color: var(--lightBlue);
   }

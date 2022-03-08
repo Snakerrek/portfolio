@@ -8,24 +8,21 @@ import {
 
 import TechnologyIcon from "./TechnologyIcon";
 
-type Props = {
-  project: {
-    projectTitle: string;
-    projectDescription: string;
-    projectTechnology: string[];
-  };
-};
+import { projectsDataInterface } from "../../interfaces";
 
-const ProjectCard = ({ project }: Props) => {
+const ProjectCard = ({
+  projectImgPath,
+  projectTitle,
+  projectDescription,
+  projectTechnology,
+}: projectsDataInterface): JSX.Element => {
+  const altText: string = `Background image for ${projectTitle} project.`;
   return (
     <ProjectCardWrapper>
-      <h3>{project.projectTitle}</h3>
-      <ProjectCardImg
-        src="https://cdn.pixabay.com/photo/2020/03/26/10/58/norway-4970080_960_720.jpg"
-        alt=""
-      />
+      <h3>{projectTitle}</h3>
+      <ProjectCardImg src={projectImgPath} alt={altText} />
       <ProjectTechnologyHolder>
-        {project.projectTechnology.map((techIcon, id) => {
+        {projectTechnology.map((techIcon, id) => {
           return <TechnologyIcon key={id} techIcon={techIcon} />;
         })}
       </ProjectTechnologyHolder>

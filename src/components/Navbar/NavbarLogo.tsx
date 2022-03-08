@@ -6,7 +6,7 @@ import { NavbarListItemIcon } from "./NavbarListItemLink.styles";
 
 import { HiArrowsExpand } from "react-icons/hi";
 
-const NavbarLogo: React.FC = () => {
+const NavbarLogo = (): JSX.Element => {
   return (
     <NavbarLogoContainer>
       <NavbarListItemLink href="/#">
