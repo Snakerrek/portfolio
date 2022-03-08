@@ -37,11 +37,15 @@ export interface skillsDataInterface {
   };
 }
 
+import { IconType } from "react-icons";
 export interface projectsDataInterface {
   projectImgPath: string;
+  projectLiveLink: string;
+  projectGitHubLink: string;
   projectTitle: string;
   projectDescription: string;
   projectTechnology: string[];
+  projectTechnologyIcons: IconType[];
 }
 
 export interface projectFilterInterface {

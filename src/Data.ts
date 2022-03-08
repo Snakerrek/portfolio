@@ -1,4 +1,18 @@
 import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiBootstrap,
+  SiStyledcomponents,
+  SiThreedotjs,
+  SiCsharp,
+  SiUnity,
+  SiAndroid,
+} from "react-icons/si";
+
+import {
   homeSectionDataInterface,
   aboutMeSectionDataInterface,
   projectsDataInterface,
@@ -73,6 +87,10 @@ export const skillsData: skillsDataInterface[] = [
     skillName: "styled-components",
     backgroundColors: { top: "#F2B462", bottom: "#DB7390" },
   },
+  {
+    skillName: "three-js",
+    backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" },
+  },
 ];
 
 export const technologyNamesForFilter: string[] = [
@@ -84,6 +102,7 @@ export const technologyNamesForFilter: string[] = [
   "react",
   "bootstrap",
   "styled-components",
+  "three-js",
   "c-sharp",
   "unity",
   "android",
@@ -91,66 +110,122 @@ export const technologyNamesForFilter: string[] = [
 
 export const projectsData: projectsDataInterface[] = [
   {
-    projectImgPath:
-      "https://www.casper.com.tr/uploads/2021/02/excalibur-wallpaper-06.jpg",
-    projectTitle: "Project 1",
-    projectDescription: "Some kind of description",
-    projectTechnology: ["js", "html", "css"],
+    projectImgPath: "portfolio-website",
+    projectLiveLink: "",
+    projectGitHubLink: "",
+    projectTitle: "Portfolio website",
+    projectDescription: "",
+    projectTechnology: [
+      "html",
+      "css",
+      "ts",
+      "react",
+      "styled-components",
+      "three-js",
+    ],
+    projectTechnologyIcons: [
+      SiHtml5,
+      SiCss3,
+      SiTypescript,
+      SiReact,
+      SiStyledcomponents,
+      SiThreedotjs,
+    ],
   },
   {
-    projectImgPath:
-      "https://www.casper.com.tr/uploads/2021/02/excalibur-wallpaper-06.jpg",
-    projectTitle: "Project 2",
-    projectDescription: "Some kind of description 2",
-    projectTechnology: ["js", "html", "css"],
+    projectImgPath: "project-tracker",
+    projectLiveLink: "https://snakerrek.github.io/project-tracker/",
+    projectGitHubLink: "https://github.com/Snakerrek/project-tracker",
+    projectTitle: "Project tracker",
+    projectDescription:
+      "Single-page react application that helps you track progress of your projects.",
+    projectTechnology: ["html", "css", "js", "react", "styled-components"],
+    projectTechnologyIcons: [
+      SiHtml5,
+      SiCss3,
+      SiJavascript,
+      SiReact,
+      SiStyledcomponents,
+    ],
   },
   {
-    projectImgPath:
-      "https://www.casper.com.tr/uploads/2021/02/excalibur-wallpaper-06.jpg",
-    projectTitle: "Project 3",
-    projectDescription: "Some kind of description 3",
-    projectTechnology: ["js", "html", "css"],
+    projectImgPath: "coffee-lovers",
+    projectLiveLink: "https://snakerrek.github.io/coffee-website/",
+    projectGitHubLink: "https://github.com/Snakerrek/coffee-website",
+    projectTitle: "Coffee lovers",
+    projectDescription: "Single-page website for coffee lovers.",
+    projectTechnology: ["html", "css", "js", "bootstrap"],
+    projectTechnologyIcons: [SiHtml5, SiCss3, SiJavascript, SiBootstrap],
   },
   {
-    projectImgPath:
-      "https://www.casper.com.tr/uploads/2021/02/excalibur-wallpaper-06.jpg",
-    projectTitle: "Project 1",
-    projectDescription: "Some kind of description",
-    projectTechnology: ["html", "css"],
+    projectImgPath: "stacja-diagnostyczna",
+    projectLiveLink: "http://www.stacja.zsnr1-klobuck.edu.pl/",
+    projectGitHubLink: "https://github.com/Snakerrek/stacja-diagnostyczna",
+    projectTitle: "Stacja diagnostyczna",
+    projectDescription:
+      "A commercial application for vehicle inspection station.",
+    projectTechnology: ["html", "css", "js"],
+    projectTechnologyIcons: [SiHtml5, SiCss3, SiJavascript],
   },
   {
-    projectImgPath:
-      "https://www.casper.com.tr/uploads/2021/02/excalibur-wallpaper-06.jpg",
-    projectTitle: "Project 2",
-    projectDescription: "Some kind of description 2",
-    projectTechnology: ["js", "html"],
+    projectImgPath: "word-counter",
+    projectLiveLink: "https://snakerrek.github.io/Word-Counter/",
+    projectGitHubLink: "https://github.com/Snakerrek/Word-Counter",
+    projectTitle: "Word counter",
+    projectDescription:
+      "The application breaks down the given text into characters, words, sentences and paragraphs. Gives also approximate time of read.",
+    projectTechnology: ["html", "css", "js"],
+    projectTechnologyIcons: [SiHtml5, SiCss3, SiJavascript],
   },
   {
-    projectImgPath:
-      "https://www.casper.com.tr/uploads/2021/02/excalibur-wallpaper-06.jpg",
-    projectTitle: "Project 3",
-    projectDescription: "Some kind of description 3",
-    projectTechnology: ["js", "css"],
+    projectImgPath: "password-generator",
+    projectLiveLink: "https://snakerrek.github.io/password-generator/",
+    projectGitHubLink: "https://github.com/Snakerrek/password-generator",
+    projectTitle: "Password generator / checker",
+    projectDescription:
+      "The application generates passwords according to the parameters set by the user and can also check the password strength.",
+    projectTechnology: ["html", "css", "js"],
+    projectTechnologyIcons: [SiHtml5, SiCss3, SiJavascript],
   },
   {
-    projectImgPath:
-      "https://www.casper.com.tr/uploads/2021/02/excalibur-wallpaper-06.jpg",
-    projectTitle: "Project 1",
-    projectDescription: "Some kind of description",
-    projectTechnology: ["js", "html", "css"],
+    projectImgPath: "project-umbra",
+    projectLiveLink: "",
+    projectGitHubLink: "https://github.com/Snakerrek/Project-Umbra",
+    projectTitle: "Project Umbra",
+    projectDescription:
+      "2D space shooter with random world generation, enemies and much more.",
+    projectTechnology: ["c-sharp", "unity"],
+    projectTechnologyIcons: [SiCsharp, SiUnity],
   },
   {
-    projectImgPath:
-      "https://www.casper.com.tr/uploads/2021/02/excalibur-wallpaper-06.jpg",
-    projectTitle: "Project 2",
-    projectDescription: "Some kind of description 2",
-    projectTechnology: ["js", "html", "css"],
+    projectImgPath: "flappit",
+    projectLiveLink:
+      "https://play.google.com/store/apps/details?id=com.Snakerrek.Flappit&gl=PL",
+    projectGitHubLink: "https://github.com/Snakerrek/Flappit-Android",
+    projectTitle: "Flappit",
+    projectDescription:
+      "Android game made in C# with Unity engine, simple arcade game based on original Flappy Bird.",
+    projectTechnology: ["c-sharp", "unity", "android"],
+    projectTechnologyIcons: [SiCsharp, SiUnity, SiAndroid],
   },
   {
-    projectImgPath:
-      "https://www.casper.com.tr/uploads/2021/02/excalibur-wallpaper-06.jpg",
-    projectTitle: "Project 3",
-    projectDescription: "Some kind of description 3",
-    projectTechnology: ["js", "html", "css"],
+    projectImgPath: "spinning-shapes",
+    projectLiveLink:
+      "https://play.google.com/store/apps/details?id=com.Snakerrek.SpinningShapes",
+    projectGitHubLink: "https://github.com/Snakerrek/Spinning-Shapes",
+    projectTitle: "Spinning Shapes",
+    projectDescription: "Super Hexagon clone for Android.",
+    projectTechnology: ["c-sharp", "unity", "android"],
+    projectTechnologyIcons: [SiCsharp, SiUnity, SiAndroid],
+  },
+  {
+    projectImgPath: "voxel-world-generator",
+    projectLiveLink: "",
+    projectGitHubLink: "https://github.com/Snakerrek/Voxel-World-Generator",
+    projectTitle: "Voxel world generator",
+    projectDescription:
+      "Unity application that generates random voxel worlds (built with cube blocks).",
+    projectTechnology: ["c-sharp", "unity"],
+    projectTechnologyIcons: [SiCsharp, SiUnity],
   },
 ];

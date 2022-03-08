@@ -6,8 +6,6 @@ import {
   ProjectTechnologyHolder,
 } from "./ProjectCard.styles";
 
-import TechnologyIcon from "./TechnologyIcon";
-
 import { projectsDataInterface } from "../../interfaces";
 
 const ProjectCard = ({
@@ -15,15 +13,19 @@ const ProjectCard = ({
   projectTitle,
   projectDescription,
   projectTechnology,
+  projectTechnologyIcons,
 }: projectsDataInterface): JSX.Element => {
   const altText: string = `Background image for ${projectTitle} project.`;
   return (
     <ProjectCardWrapper>
       <h3>{projectTitle}</h3>
-      <ProjectCardImg src={projectImgPath} alt={altText} />
+      <ProjectCardImg
+        src={require(`../../assets/projects/${projectImgPath}.png`)}
+        alt={altText}
+      />
       <ProjectTechnologyHolder>
-        {projectTechnology.map((techIcon, id) => {
-          return <TechnologyIcon key={id} techIcon={techIcon} />;
+        {projectTechnologyIcons.map((TechIcon, id) => {
+          return <TechIcon key={id} />;
         })}
       </ProjectTechnologyHolder>
     </ProjectCardWrapper>
