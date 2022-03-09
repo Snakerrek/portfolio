@@ -19,6 +19,8 @@ import {
   skillsDataInterface,
 } from "./interfaces";
 
+const currentYear = new Date().getFullYear();
+
 export const homeSectionData: homeSectionDataInterface = {
   homeTextFirstLine: "Hi, I'm Tomasz",
   homeTextSecondLine: "Front-end Developer",
@@ -47,8 +49,13 @@ export const homeSectionData: homeSectionDataInterface = {
 
 export const aboutMeSectionData: aboutMeSectionDataInterface = {
   title: "About me",
-  aboutMeText:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna sapien, mattis ac enim at, accumsan accumsan sem. Pellentesque vitae varius dolor. Curabitur lacinia metus nunc, a vulputate augue tempus non. Praesent vitae metus ac mi convallis hendrerit. Maecenas blandit ex eget lorem congue tempor vel at nulla. Suspendisse turpis dui, euismod ut sapien et, sodales sodales risus. Maecenas mattis, urna vitae suscipit scelerisque, eros leo consequat velit, sed rhoncus odio arcu eu massa. Aliquam eget suscipit eros. Praesent tincidunt consectetur vehicula. Nunc vitae nulla felis.",
+  aboutMeText: [
+    `I'm ${
+      currentYear - 1999
+    } years old Computer Science student at Politechnika Częstochowska. `,
+    `I started my adventure with programming by creating games using the unity engine, then I tried my hand at creating websites and web applications. In a short time I discovered that this is something I'm truly fascinated with. Every day I try to become better than the day before.`,
+    `Programming is my biggest passion, but not the only one, I love to spend my free time reading books and playing games (especially fantasy/sci-fi genres are close to my heart).`,
+  ],
   object3Dconfig: {
     scale: 0.035,
     modelPath: "/wraith.glb",

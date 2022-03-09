@@ -22,7 +22,7 @@ export interface FFEconfigInterface {
 
 export interface aboutMeSectionDataInterface {
   title: string;
-  aboutMeText: string;
+  aboutMeText: string[];
   object3Dconfig: {
     scale: number;
     modelPath: string;

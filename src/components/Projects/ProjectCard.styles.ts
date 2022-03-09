@@ -12,9 +12,9 @@ export const ProjectCardWrapper = styled.div`
   border: double 4px transparent;
   border-radius: 15px;
   background-image: linear-gradient(
-    to right bottom,
-    var(--lightBlue),
-    rgba(12, 12, 12, 0.1) 30%
+    to bottom,
+    rgba(69, 253, 245, 0.7),
+    rgba(12, 12, 12, 0.1) 45%
   );
   background-origin: border-box;
 

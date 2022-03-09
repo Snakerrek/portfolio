@@ -33,7 +33,9 @@ const About = ({
       children={
         <ContentWrapper>
           <TextHolder>
-            <p>{aboutMeText}</p>
+            {aboutMeText.map((paragraph) => {
+              return <p>{paragraph}</p>;
+            })}
           </TextHolder>
           <AnimatedObject3D
             modelPath={object3Dconfig.modelPath}
