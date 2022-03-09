@@ -6,5 +6,4 @@ export const SkillsHolder = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: blue;
 `;

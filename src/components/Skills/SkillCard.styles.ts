@@ -10,10 +10,17 @@ export const Card = styled.div<Props>`
   flex: 1 1 auto;
   width: 300px;
   height: 300px;
+  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: 0.5s ease;
+  &:hover {
+    transform: scale3d(0.95, 0.95, 0.95);
+    border: solid 5px white;
+  }
 
   img {
     max-width: 150px;
@@ -42,6 +49,44 @@ export const Card = styled.div<Props>`
     }
     img {
       max-width: 80px;
+    }
+  }
+`;
+
+export const AdvancementTextContainer = styled.div`
+  opacity: 0;
+  position: absolute;
+  bottom: 0px;
+  transition: 0.5s;
+  text-align: center;
+
+  h3 {
+    cursor: default;
+    font-size: 1.5rem;
+    margin: 0 0 5px 0;
+  }
+
+  h3 span {
+    transition: 0.5s ease 0.25s;
+  }
+
+  ${Card}:hover & {
+    opacity: 1;
+    h3 span {
+      color: var(--white);
+      text-shadow: 0 0 10px var(--white), 0 0 20px var(--white),
+        0 0 40px var(--white), 0 0 60px var(--white), 0 0 90px var(--white);
+    }
+  }
+
+  @media screen and (max-width: 1150px) {
+    h3 {
+      font-size: 2vw;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    h3 {
+      font-size: 3vw;
     }
   }
 `;

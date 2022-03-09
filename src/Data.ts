@@ -63,39 +63,59 @@ export const aboutMeSectionData: aboutMeSectionDataInterface = {
 };
 
 export const skillsData: skillsDataInterface[] = [
-  { skillName: "js", backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" } },
-  { skillName: "ts", backgroundColors: { top: "#205493", bottom: "#093061" } },
+  {
+    skillName: "js",
+    stageOfAdvancement: "Good knowledge",
+    backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" },
+  },
+  {
+    skillName: "ts",
+    stageOfAdvancement: "Good knowledge",
+    backgroundColors: { top: "#205493", bottom: "#093061" },
+  },
   {
     skillName: "react",
+    stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#181C20", bottom: "#000000" },
   },
-  { skillName: "css", backgroundColors: { top: "#205493", bottom: "#093061" } },
+  {
+    skillName: "css",
+    stageOfAdvancement: "Good knowledge",
+    backgroundColors: { top: "#205493", bottom: "#093061" },
+  },
   {
     skillName: "bootstrap",
+    stageOfAdvancement: "Basic knowledge",
     backgroundColors: { top: "#672079", bottom: "#472C73" },
   },
   {
     skillName: "html",
+    stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#F08129", bottom: "#E75726" },
   },
   {
     skillName: "c-sharp",
+    stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#672079", bottom: "#472C73" },
   },
   {
     skillName: "unity",
+    stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#181C20", bottom: "#000000" },
   },
   {
     skillName: "android",
+    stageOfAdvancement: "Basic knowledge",
     backgroundColors: { top: "#7fa013", bottom: "#526b00" },
   },
   {
     skillName: "styled-components",
+    stageOfAdvancement: "Basic knowledge",
     backgroundColors: { top: "#F2B462", bottom: "#DB7390" },
   },
   {
     skillName: "three-js",
+    stageOfAdvancement: "Basic knowledge",
     backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" },
   },
 ];

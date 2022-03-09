@@ -21,6 +21,7 @@ const Skills = ({ skillsData }: Props): JSX.Element => {
               key={index}
               skillName={skill.skillName}
               backgroundColors={skill.backgroundColors}
+              stageOfAdvancement={skill.stageOfAdvancement}
             />
           );
         })}

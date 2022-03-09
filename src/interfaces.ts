@@ -31,6 +31,7 @@ export interface aboutMeSectionDataInterface {
 
 export interface skillsDataInterface {
   skillName: string;
+  stageOfAdvancement: string;
   backgroundColors: {
     top: string;
     bottom: string;
