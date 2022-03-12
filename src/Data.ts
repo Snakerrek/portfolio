@@ -12,11 +12,15 @@ import {
   SiAndroid,
 } from "react-icons/si";
 
+import { MdPlace, MdMail } from "react-icons/md";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+
 import {
   homeSectionDataInterface,
   aboutMeSectionDataInterface,
   projectsDataInterface,
   skillsDataInterface,
+  ContactDataInterface,
 } from "./interfaces";
 
 const currentYear = new Date().getFullYear();
@@ -254,5 +258,28 @@ export const projectsData: projectsDataInterface[] = [
       "Unity application that generates random voxel worlds (built with cube blocks).",
     projectTechnology: ["c-sharp", "unity"],
     projectTechnologyIcons: [SiCsharp, SiUnity],
+  },
+];
+
+export const contactData: ContactDataInterface[] = [
+  {
+    icon: MdMail,
+    text: "tomasz.kraszewski1999@gmail.com",
+    link: "mailto:tomasz.kraszewski1999@gmail.com",
+  },
+  {
+    icon: FaLinkedinIn,
+    text: "LinkedIn",
+    link: "https://www.linkedin.com/in/tomaszkraszewski",
+  },
+  {
+    icon: FaGithub,
+    text: "GitHub",
+    link: "https://github.com/Snakerrek",
+  },
+  {
+    icon: MdPlace,
+    text: "Częstochowa, Poland",
+    link: "",
   },
 ];

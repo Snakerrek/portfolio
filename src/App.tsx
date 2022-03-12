@@ -7,12 +7,14 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
 
 // Data
 import { homeSectionData } from "./Data";
 import { aboutMeSectionData } from "./Data";
 import { technologyNamesForFilter, projectsData } from "./Data";
 import { skillsData } from "./Data";
+import { contactData } from "./Data";
 
 const App = (): JSX.Element => {
   return (
@@ -35,6 +37,7 @@ const App = (): JSX.Element => {
           technologyNamesForFilter={technologyNamesForFilter}
           projectsData={projectsData}
         />
+        <Contact contactData={contactData} />
       </main>
       <GlobalStyle />
     </div>

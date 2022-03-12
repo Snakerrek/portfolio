@@ -58,3 +58,9 @@ export interface projectFilterInterface {
   activeTechnology: string;
   setActiveTechnology: React.Dispatch<React.SetStateAction<string>>;
 }
+
+export interface ContactDataInterface {
+  icon: IconType;
+  text: string;
+  link: string;
+}
