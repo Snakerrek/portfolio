@@ -31,8 +31,8 @@ const About = ({
     <SectionWrapper title={title} scrollDown={true}>
       <ContentWrapper>
         <TextHolder>
-          {aboutMeText.map((paragraph) => {
-            return <p>{paragraph}</p>;
+          {aboutMeText.map((paragraph, index) => {
+            return <p key={index}>{paragraph}</p>;
           })}
         </TextHolder>
         <AnimatedObject3D

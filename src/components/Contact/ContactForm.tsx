@@ -1,4 +1,13 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
+
+import {
+  validateEmail,
+  validateName,
+  validateMessage,
+  incrementUserSentMails,
+  canUserSendMail,
+} from "../../helpers";
 
 import {
   ContactFormWrapper,
@@ -7,7 +16,7 @@ import {
   SubmitButton,
 } from "./ContactForm.styles";
 
-import IncorrectInput from "./IncorrectInput";
+import FormMessage from "./FormMessage";
 
 type Props = {};
 
@@ -16,14 +25,59 @@ const ContactForm = (props: Props): JSX.Element => {
     name: boolean;
     email: boolean;
     message: boolean;
-  }>({ name: false, email: false, message: false });
+  }>({ name: true, email: true, message: true });
+
+  const [mailStatus, setMailStatus] = useState<{
+    canSend: boolean;
+    sent: boolean;
+  }>({ canSend: canUserSendMail(), sent: false });
 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+
+  const validateForm = () => {
+    const nameCorrectness = validateName(name);
+    const emailCorrectness = validateEmail(email);
+    const messageCorrectness = validateMessage(message);
+    setInputCorrectness({
+      name: nameCorrectness,
+      email: emailCorrectness,
+      message: messageCorrectness,
+    });
+    return nameCorrectness && emailCorrectness && messageCorrectness;
+  };
+
+  const sendEmail = (e: any) => {
+    console.log("email sent");
+    emailjs.sendForm("portfolio", "portfolio-template", e.target, "").then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+    incrementUserSentMails();
+    setMailStatus((prevState) => ({ ...prevState, sent: true }));
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    validateForm();
+    if (validateForm()) {
+      sendEmail(e);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      console.log("email not sent");
+    }
+  };
+
   return (
     <ContactFormWrapper>
-      <ContactFormForm>
+      <ContactFormForm onSubmit={handleSubmit}>
         <FormGroup>
           <label htmlFor="name">
             Your name
@@ -36,7 +90,7 @@ const ContactForm = (props: Props): JSX.Element => {
             />
           </label>
           {!inputCorrectness.name && (
-            <IncorrectInput message="Incorrect name" />
+            <FormMessage message="Incorrect name" color={"red"} />
           )}
         </FormGroup>
         <FormGroup>
@@ -51,7 +105,7 @@ const ContactForm = (props: Props): JSX.Element => {
             />
           </label>
           {!inputCorrectness.email && (
-            <IncorrectInput message="Incorrect e-mail address" />
+            <FormMessage message="Incorrect e-mail address" color={"red"} />
           )}
         </FormGroup>
         <FormGroup>
@@ -65,10 +119,18 @@ const ContactForm = (props: Props): JSX.Element => {
             />
           </label>
           {!inputCorrectness.message && (
-            <IncorrectInput message="Incorrect message" />
+            <FormMessage message="Incorrect message" color={"red"} />
           )}
         </FormGroup>
-        <SubmitButton type="submit">Send</SubmitButton>
+        {mailStatus.canSend ? (
+          mailStatus.sent ? (
+            <FormMessage message={"Message sent!"} color={"green"} />
+          ) : (
+            <SubmitButton type="submit">Send</SubmitButton>
+          )
+        ) : (
+          <FormMessage message={"You can't send more e-mails"} color={"red"} />
+        )}
       </ContactFormForm>
     </ContactFormWrapper>
   );
