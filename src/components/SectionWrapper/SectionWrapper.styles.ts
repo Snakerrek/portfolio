@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
 
   @media screen and (min-width: 601px) {
     & {

@@ -16,7 +16,6 @@ const Projects = ({
   technologyNamesForFilter,
   projectsData,
 }: Props): JSX.Element => {
-  const projects = projectsData;
   const [filteredProjects, setFilteredProjects] = useState(projectsData);
   const [activeTechnology, setActiveTechnology] = useState("all");
 
@@ -24,7 +23,7 @@ const Projects = ({
     <SectionWrapper title={"My projects"}>
       <>
         <ProjectFilter
-          projects={projects}
+          projects={projectsData}
           setFilteredProjects={setFilteredProjects}
           activeTechnology={activeTechnology}
           setActiveTechnology={setActiveTechnology}
