@@ -13,7 +13,7 @@ type Props = {
 
 const Skills = ({ skillsData }: Props): JSX.Element => {
   return (
-    <SectionWrapper title={"My skills"}>
+    <SectionWrapper title={"My skills"} scrollDown={true}>
       <SkillsHolder>
         {skillsData.map((skill, index) => {
           return (

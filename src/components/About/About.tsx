@@ -28,27 +28,24 @@ const About = ({
   });
 
   return (
-    <SectionWrapper
-      title={title}
-      children={
-        <ContentWrapper>
-          <TextHolder>
-            {aboutMeText.map((paragraph) => {
-              return <p>{paragraph}</p>;
-            })}
-          </TextHolder>
-          <AnimatedObject3D
-            modelPath={object3Dconfig.modelPath}
-            canvasSize={{ x: canvasSize, y: canvasSize }}
-            modelScale={{
-              x: object3Dconfig.scale,
-              y: object3Dconfig.scale,
-              z: object3Dconfig.scale,
-            }}
-          />
-        </ContentWrapper>
-      }
-    ></SectionWrapper>
+    <SectionWrapper title={title} scrollDown={true}>
+      <ContentWrapper>
+        <TextHolder>
+          {aboutMeText.map((paragraph) => {
+            return <p>{paragraph}</p>;
+          })}
+        </TextHolder>
+        <AnimatedObject3D
+          modelPath={object3Dconfig.modelPath}
+          canvasSize={{ x: canvasSize, y: canvasSize }}
+          modelScale={{
+            x: object3Dconfig.scale,
+            y: object3Dconfig.scale,
+            z: object3Dconfig.scale,
+          }}
+        />
+      </ContentWrapper>
+    </SectionWrapper>
   );
 };
 

@@ -13,11 +13,13 @@ const NavbarSocialMediaLinks = (): JSX.Element => {
         <NavbarListItemIcon>
           <FaLinkedinIn />
         </NavbarListItemIcon>
+        <span>LinkedIn</span>
       </NavbarListItemLink>
       <NavbarListItemLink href="https://github.com/Snakerrek">
         <NavbarListItemIcon>
           <FaGithub />
         </NavbarListItemIcon>
+        <span>GitHub</span>
       </NavbarListItemLink>
     </NavbarListItem>
   );

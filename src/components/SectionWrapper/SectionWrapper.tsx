@@ -7,17 +7,22 @@ import { ScrollDownLeft, ScrollDownRight } from "./ScrollDown.styles";
 type Props = {
   title: string;
   children: JSX.Element;
+  scrollDown: boolean;
 };
 
-const SectionWrapper = ({ title, children }: Props) => {
+const SectionWrapper = ({ title, children, scrollDown }: Props) => {
   return (
     <Wrapper>
       <TitleHolder>
         <h2>{title}</h2>
       </TitleHolder>
       {children}
-      <ScrollDownLeft>Scroll down</ScrollDownLeft>
-      <ScrollDownRight>Scroll down</ScrollDownRight>
+      {scrollDown && (
+        <>
+          <ScrollDownLeft>Scroll down</ScrollDownLeft>
+          <ScrollDownRight>Scroll down</ScrollDownRight>
+        </>
+      )}
     </Wrapper>
   );
 };

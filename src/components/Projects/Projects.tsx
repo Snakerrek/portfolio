@@ -20,7 +20,7 @@ const Projects = ({
   const [activeTechnology, setActiveTechnology] = useState("all");
 
   return (
-    <SectionWrapper title={"My projects"}>
+    <SectionWrapper title={"My projects"} scrollDown={true}>
       <>
         <ProjectFilter
           projects={projectsData}
