@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   *{
+    scroll-behavior: smooth;
     box-sizing: border-box;
   }
   body{

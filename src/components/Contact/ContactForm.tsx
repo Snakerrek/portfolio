@@ -49,7 +49,6 @@ const ContactForm = (props: Props): JSX.Element => {
   };
 
   const sendEmail = (e: any) => {
-    console.log("email sent");
     emailjs
       .sendForm(
         "portfolio",
@@ -71,7 +70,6 @@ const ContactForm = (props: Props): JSX.Element => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    validateForm();
     if (validateForm()) {
       sendEmail(e);
       setName("");
