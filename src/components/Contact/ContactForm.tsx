@@ -50,14 +50,21 @@ const ContactForm = (props: Props): JSX.Element => {
 
   const sendEmail = (e: any) => {
     console.log("email sent");
-    emailjs.sendForm("portfolio", "portfolio-template", e.target, "").then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    emailjs
+      .sendForm(
+        "portfolio",
+        "portfolio-template",
+        e.target,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     incrementUserSentMails();
     setMailStatus((prevState) => ({ ...prevState, sent: true }));
   };
@@ -74,7 +81,6 @@ const ContactForm = (props: Props): JSX.Element => {
       console.log("email not sent");
     }
   };
-
   return (
     <ContactFormWrapper>
       <ContactFormForm onSubmit={handleSubmit}>
