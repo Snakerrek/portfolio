@@ -5,6 +5,7 @@ type Props = {
 };
 
 export const MapWrapper = styled.div<Props>`
+  margin-top: 20px;
   background: url(${(p) => p.mapImage}) no-repeat center / cover;
   min-height: 400px;
   position: relative;
