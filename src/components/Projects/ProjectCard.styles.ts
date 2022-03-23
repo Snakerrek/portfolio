@@ -30,6 +30,7 @@ export const ProjectCardImg = styled.img`
   object-fit: cover;
   border-radius: 1rem;
   margin-bottom: 1rem;
+  aspect-ratio: 16/9;
 `;
 
 export const ProjectTechnologyHolder = styled.div`
