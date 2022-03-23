@@ -6,6 +6,7 @@ import SectionWrapper from "../SectionWrapper/SectionWrapper";
 
 import ContactForm from "./ContactForm";
 import ContactLinks from "./ContactLinks";
+import Map from "../Map/Map";
 
 import { ContactWrapper } from "./Contact.styles";
 
@@ -20,6 +21,7 @@ const Contact = ({ contactData }: Props): JSX.Element => {
         <ContactLinks contactData={contactData} />
         <ContactForm />
       </ContactWrapper>
+      <Map />
     </SectionWrapper>
   );
 };

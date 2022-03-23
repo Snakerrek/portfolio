@@ -6,7 +6,7 @@ import { ScrollDownLeft, ScrollDownRight } from "./ScrollDown.styles";
 
 type Props = {
   title: string;
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
   scrollDown: boolean;
 };
 
