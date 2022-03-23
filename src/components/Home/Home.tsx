@@ -3,7 +3,7 @@ import React from "react";
 import HomeCanvas from "../HomeCanvas/HomeCanvas";
 import Letter from "./Letter";
 
-import { TitleWrapper, HomeWrap } from "./Home.styles";
+import { TitleWrapper, HomeWrap, PatternInfo } from "./Home.styles";
 import { splitStringToArrayOfChars } from "../../helpers";
 import { homeSectionDataInterface } from "../../interfaces";
 
@@ -34,6 +34,9 @@ const Home = ({
           )}
         </div>
       </TitleWrapper>
+      <PatternInfo>
+        <p>This pattern will be different every time you visit this page :)</p>
+      </PatternInfo>
     </HomeWrap>
   );
 };
