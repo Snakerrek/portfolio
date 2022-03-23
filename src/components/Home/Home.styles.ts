@@ -6,7 +6,7 @@ export const TitleWrapper = styled.div`
 
   padding-left: 7rem;
   @media only screen and (max-width: 600px) {
-    padding-bottom: 7rem;
+    padding-top: 7rem;
     padding-left: 2rem;
   }
 `;

@@ -16,7 +16,6 @@ export const NavigationBar = styled.nav`
     }
   }
   @media only screen and (max-width: 600px) {
-    bottom: 0;
     width: 100vw;
     height: 5rem;
   }
