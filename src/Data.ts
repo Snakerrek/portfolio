@@ -28,6 +28,13 @@ import {
 } from "./interfaces";
 
 const currentYear = new Date().getFullYear();
+const gradientColorsArray = [
+  "#F92CB0",
+  "#1E3BFE",
+  "#3EDFFF",
+  "#7DFDFC",
+  "#FFFFFF",
+];
 
 export const navbarData: navbarDataInterface[] = [
   { delayID: 1, icon: FaUserAlt, text: "About", link: "#about" },
@@ -55,15 +62,30 @@ export const homeSectionData: homeSectionDataInterface = {
   },
   FFEconfig: {
     framesPerSecond: 60,
-    cellSize: 20,
-    lineWidth: 1.5,
-    vr: 0.02,
+    cellSize: Math.random() * 22.5 + 17.5,
+    lineWidth: Math.random() * 1.5 + 1,
+    vr: Math.random() * 0.0225 + 0.0175,
     gradientColors: [
-      { offset: 0.1, color: "#F92CB0" },
-      { offset: 0.3, color: "#1E3BFE" },
-      { offset: 0.5, color: "#3EDFFF" },
-      { offset: 0.7, color: "#7DFDFC" },
-      { offset: 0.9, color: "#FFFFFF" },
+      {
+        offset: 0.1,
+        color: gradientColorsArray[Math.floor(Math.random() * 4)],
+      },
+      {
+        offset: 0.3,
+        color: gradientColorsArray[Math.floor(Math.random() * 4)],
+      },
+      {
+        offset: 0.5,
+        color: gradientColorsArray[Math.floor(Math.random() * 4)],
+      },
+      {
+        offset: 0.7,
+        color: gradientColorsArray[Math.floor(Math.random() * 4)],
+      },
+      {
+        offset: 0.9,
+        color: gradientColorsArray[Math.floor(Math.random() * 4)],
+      },
     ],
     sizeOfMouse: 25,
     lineLength: { min: 5, max: 60 },
