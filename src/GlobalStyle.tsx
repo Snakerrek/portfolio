@@ -51,7 +51,6 @@ export const GlobalStyle = createGlobalStyle`
   main {
     padding-left: 5rem;
     @media only screen and (max-width: 600px) {
-      padding-bottom: 5rem;
       padding-left: 0;
     }
   }

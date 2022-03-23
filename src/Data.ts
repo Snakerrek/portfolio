@@ -24,7 +24,7 @@ import {
   aboutMeSectionDataInterface,
   projectsDataInterface,
   skillsDataInterface,
-  ContactDataInterface,
+  contactDataInterface,
 } from "./interfaces";
 
 const currentYear = new Date().getFullYear();
@@ -282,25 +282,34 @@ export const projectsData: projectsDataInterface[] = [
   },
 ];
 
-export const contactData: ContactDataInterface[] = [
-  {
-    icon: MdMail,
-    text: "tomasz.kraszewski1999@gmail.com",
-    link: "mailto:tomasz.kraszewski1999@gmail.com",
+export const contactData: contactDataInterface = {
+  links: [
+    {
+      icon: MdMail,
+      text: "tomasz.kraszewski1999@gmail.com",
+      link: "mailto:tomasz.kraszewski1999@gmail.com",
+    },
+    {
+      icon: FaLinkedinIn,
+      text: "linkedin.com/in/tomaszkraszewski",
+      link: "https://www.linkedin.com/in/tomaszkraszewski",
+    },
+    {
+      icon: FaGithub,
+      text: "github.com/Snakerrek",
+      link: "https://github.com/Snakerrek",
+    },
+    {
+      icon: MdPlace,
+      text: "Częstochowa, Poland",
+      link: "",
+    },
+  ],
+  backgroundCanvasConfig: {
+    particleDensity: 20,
+    particleSize: { min: 3, max: 10 },
+    particleColor: "#1C11A4",
+    lineColor: "28,32,255",
+    lineWidth: 2,
   },
-  {
-    icon: FaLinkedinIn,
-    text: "LinkedIn",
-    link: "https://www.linkedin.com/in/tomaszkraszewski",
-  },
-  {
-    icon: FaGithub,
-    text: "GitHub",
-    link: "https://github.com/Snakerrek",
-  },
-  {
-    icon: MdPlace,
-    text: "Częstochowa, Poland",
-    link: "",
-  },
-];
+};

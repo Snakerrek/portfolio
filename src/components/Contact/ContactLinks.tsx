@@ -1,13 +1,13 @@
 import React from "react";
 
-import { ContactDataInterface } from "../../interfaces";
+import { contactDataLinkInterface } from "../../interfaces";
 
 import { ContactLinksWrapper } from "./ContactLinks.styles";
 
 import ContactLink from "./ContactLink";
 
 type Props = {
-  contactData: ContactDataInterface[];
+  contactData: contactDataLinkInterface[];
 };
 
 const ContactLinks = ({ contactData }: Props): JSX.Element => {

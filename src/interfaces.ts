@@ -66,8 +66,19 @@ export interface projectFilterInterface {
   setActiveTechnology: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export interface ContactDataInterface {
+export interface contactDataInterface {
+  links: contactDataLinkInterface[];
+  backgroundCanvasConfig: backgroundCanvasConfigInterface;
+}
+export interface contactDataLinkInterface {
   icon: IconType;
   text: string;
   link: string;
+}
+export interface backgroundCanvasConfigInterface {
+  particleDensity: number;
+  particleSize: { min: number; max: number }; // best 3-10
+  particleColor: string; // hexadecimal
+  lineColor: string; // rgb must be written like "28,32,255"
+  lineWidth: number; // best 2
 }

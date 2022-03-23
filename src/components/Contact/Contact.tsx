@@ -1,24 +1,28 @@
 import React from "react";
 
-import { ContactDataInterface } from "../../interfaces";
+import { contactDataInterface } from "../../interfaces";
 
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 
 import ContactForm from "./ContactForm";
 import ContactLinks from "./ContactLinks";
+import ContactCanvas from "../ContactCanvas/ContactCanvas";
 import Map from "../Map/Map";
 
 import { ContactWrapper } from "./Contact.styles";
 
 type Props = {
-  contactData: ContactDataInterface[];
+  contactData: contactDataInterface;
 };
 
 const Contact = ({ contactData }: Props): JSX.Element => {
   return (
     <SectionWrapper title={"Contact me"} scrollDown={false}>
+      <ContactCanvas
+        backgroundCanvasConfig={contactData.backgroundCanvasConfig}
+      />
       <ContactWrapper>
-        <ContactLinks contactData={contactData} />
+        <ContactLinks contactData={contactData.links} />
         <ContactForm />
       </ContactWrapper>
       <Map />
