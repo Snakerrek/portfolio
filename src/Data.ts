@@ -62,9 +62,9 @@ export const homeSectionData: homeSectionDataInterface = {
   },
   FFEconfig: {
     framesPerSecond: 60,
-    cellSize: Math.random() * 22.5 + 17.5,
-    lineWidth: Math.random() * 1.5 + 1,
-    vr: Math.random() * 0.0225 + 0.0175,
+    cellSize: Math.random() * (22 - 18) + 18,
+    lineWidth: Math.random() * (1.5 - 1) + 1,
+    vr: Math.random() * (0.0225 - 0.0175) + 0.0175,
     gradientColors: [
       {
         offset: 0.1,
@@ -89,7 +89,10 @@ export const homeSectionData: homeSectionDataInterface = {
     ],
     sizeOfMouse: 25,
     lineLength: { min: 5, max: 60 },
-    angleMultiplier: { x: 0.005, y: 0.005 },
+    angleMultiplier: {
+      x: Math.random() * (0.01 - 0.004) + 0.004,
+      y: Math.random() * (0.01 - 0.004) + 0.004,
+    },
     radiusClampValues: { min: -6, max: 6 },
   },
 };
