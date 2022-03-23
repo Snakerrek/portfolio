@@ -327,7 +327,7 @@ export const contactData: contactDataInterface = {
     {
       icon: MdPlace,
       text: "Częstochowa, Poland",
-      link: "",
+      link: "https://www.google.com/maps/place/Cz%C4%99stochowa/@50.8092997,19.052732,12z/data=!3m1!4b1!4m5!3m4!1s0x4710b5c54e2ca8af:0x854f0d4d1a178236!8m2!3d50.8118195!4d19.1203094",
     },
   ],
   backgroundCanvasConfig: {

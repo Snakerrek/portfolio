@@ -10,7 +10,7 @@ type Props = {
 
 const ContactLink = ({ icon, text, link }: Props): JSX.Element => {
   return (
-    <Link href={link}>
+    <Link target="_blank" rel="noopener noreferrer" href={link}>
       <ContactLinkWrapper>
         <Icon>{icon}</Icon>
         <Info>
