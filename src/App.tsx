@@ -28,20 +28,28 @@ const App = (): JSX.Element => {
         FFEconfig={homeSectionData.FFEconfig}
       />
       <main>
-        <a href="#" id="about" className="navbarAnchor"></a>
+        <a href="/#" id="about" className="navbarAnchor">
+          {" "}
+        </a>
         <About
           title={aboutMeSectionData.title}
           aboutMeText={aboutMeSectionData.aboutMeText}
           object3Dconfig={aboutMeSectionData.object3Dconfig}
         />
-        <a href="#" id="mySkills" className="navbarAnchor"></a>
+        <a href="/#" id="mySkills" className="navbarAnchor">
+          {" "}
+        </a>
         <Skills skillsData={skillsData} />
-        <a href="#" id="projects" className="navbarAnchor"></a>
+        <a href="/#" id="projects" className="navbarAnchor">
+          {" "}
+        </a>
         <Projects
           technologyNamesForFilter={technologyNamesForFilter}
           projectsData={projectsData}
         />
-        <a href="#" id="contact" className="navbarAnchor"></a>
+        <a href="/#" id="contact" className="navbarAnchor">
+          {" "}
+        </a>
         <Contact contactData={contactData} />
       </main>
       <GlobalStyle />
