@@ -18,6 +18,16 @@ export const GlobalStyle = createGlobalStyle`
     --fontExtraSmall: 0.8rem;
   }
 
+  .navbarAnchor {
+
+    @media screen and (max-width: 600px){
+      display: block;
+      position: relative;
+      top: -5rem;
+      visibility: hidden;
+    }
+  }
+
   *{
     scroll-behavior: smooth;
     box-sizing: border-box;

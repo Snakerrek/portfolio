@@ -1,3 +1,10 @@
+export interface navbarDataInterface {
+  delayID: number;
+  icon: IconType;
+  text: string;
+  link: string;
+}
+
 export interface homeSectionDataInterface {
   homeTextFirstLine: string;
   homeTextSecondLine: string;

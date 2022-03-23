@@ -10,6 +10,7 @@ import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 
 // Data
+import { navbarData } from "./Data";
 import { homeSectionData } from "./Data";
 import { aboutMeSectionData } from "./Data";
 import { technologyNamesForFilter, projectsData } from "./Data";
@@ -19,7 +20,7 @@ import { contactData } from "./Data";
 const App = (): JSX.Element => {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar navbarData={navbarData} />
       <Home
         homeTextFirstLine={homeSectionData.homeTextFirstLine}
         homeTextSecondLine={homeSectionData.homeTextSecondLine}
@@ -27,16 +28,20 @@ const App = (): JSX.Element => {
         FFEconfig={homeSectionData.FFEconfig}
       />
       <main>
+        <a href="#" id="about" className="navbarAnchor"></a>
         <About
           title={aboutMeSectionData.title}
           aboutMeText={aboutMeSectionData.aboutMeText}
           object3Dconfig={aboutMeSectionData.object3Dconfig}
         />
+        <a href="#" id="mySkills" className="navbarAnchor"></a>
         <Skills skillsData={skillsData} />
+        <a href="#" id="projects" className="navbarAnchor"></a>
         <Projects
           technologyNamesForFilter={technologyNamesForFilter}
           projectsData={projectsData}
         />
+        <a href="#" id="contact" className="navbarAnchor"></a>
         <Contact contactData={contactData} />
       </main>
       <GlobalStyle />

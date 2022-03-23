@@ -14,8 +14,12 @@ import {
 
 import { MdPlace, MdMail } from "react-icons/md";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { MdOutlineConnectWithoutContact } from "react-icons/md";
+import { BsGearWideConnected } from "react-icons/bs";
+import { FaLaptopCode, FaUserAlt } from "react-icons/fa";
 
 import {
+  navbarDataInterface,
   homeSectionDataInterface,
   aboutMeSectionDataInterface,
   projectsDataInterface,
@@ -24,6 +28,23 @@ import {
 } from "./interfaces";
 
 const currentYear = new Date().getFullYear();
+
+export const navbarData: navbarDataInterface[] = [
+  { delayID: 1, icon: FaUserAlt, text: "About", link: "#about" },
+  {
+    delayID: 2,
+    icon: BsGearWideConnected,
+    text: "My Skills",
+    link: "#mySkills",
+  },
+  { delayID: 3, icon: FaLaptopCode, text: "Projects", link: "#projects" },
+  {
+    delayID: 4,
+    icon: MdOutlineConnectWithoutContact,
+    text: "Contact",
+    link: "#contact",
+  },
+];
 
 export const homeSectionData: homeSectionDataInterface = {
   homeTextFirstLine: "Hi, I'm Tomasz",
