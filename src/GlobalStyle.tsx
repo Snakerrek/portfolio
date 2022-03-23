@@ -19,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .navbarAnchor {
-
     @media screen and (max-width: 600px){
       display: block;
       position: relative;
