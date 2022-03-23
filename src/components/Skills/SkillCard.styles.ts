@@ -17,6 +17,14 @@ export const Card = styled.div<Props>`
   justify-content: center;
 
   transition: 0.5s ease;
+
+  /* &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  } */
+
   &:hover {
     transform: scale3d(0.95, 0.95, 0.95);
     border: solid 5px white;
@@ -73,9 +81,18 @@ export const AdvancementTextContainer = styled.div`
   ${Card}:hover & {
     opacity: 1;
     h3 span {
+      font-size: 1.35rem;
       color: var(--white);
-      text-shadow: 0 0 10px var(--white), 0 0 20px var(--white),
-        0 0 40px var(--white), 0 0 60px var(--white), 0 0 90px var(--white);
+      text-shadow: 0 0 10px black, 0 0 20px var(--white), 0 0 40px var(--white),
+        0 0 60px var(--white), 0 0 90px var(--white);
+    }
+    @media screen and (max-width: 1150px) {
+      h3 span {
+        font-size: 2vw;
+        color: var(--white);
+        text-shadow: 0 0 10px black, 0 0 15px var(--white),
+          0 0 25px var(--white), 0 0 40px var(--white), 0 0 60px var(--white);
+      }
     }
   }
 
@@ -84,9 +101,9 @@ export const AdvancementTextContainer = styled.div`
       font-size: 2vw;
     }
   }
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     h3 {
       font-size: 3vw;
     }
-  }
+  } */
 `;
