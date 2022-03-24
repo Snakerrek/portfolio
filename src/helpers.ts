@@ -1,4 +1,4 @@
-export const isOnMobile = () => {
+export const isOnMobile = (): boolean => {
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
@@ -10,7 +10,7 @@ export const isOnMobile = () => {
   }
 };
 
-export const splitStringToArrayOfChars = (text: string) => {
+export const splitStringToArrayOfChars = (text: string): string[] => {
   let characters: string[] = [];
   for (let i = 0; i < text.length; i++) {
     characters.push(text[i]);
@@ -31,14 +31,14 @@ export const validateMessage = (message: string): boolean => {
   return message.length > 1 && message.length < 5000;
 };
 
-export const canUserSendMail = () => {
+export const canUserSendMail = (): boolean => {
   const mailCount: string | null = localStorage.getItem("mailCount");
   if (mailCount === null) return true;
   if (parseInt(mailCount) < 3) return true;
   return false;
 };
 
-export const incrementUserSentMails = () => {
+export const incrementUserSentMails = (): void => {
   const mailCount: string | null = localStorage.getItem("mailCount");
   if (mailCount === null) {
     localStorage.setItem("mailCount", "1");

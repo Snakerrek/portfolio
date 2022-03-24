@@ -103,7 +103,7 @@ class FlowFieldEffect {
       this.radius > this.config.radiusClampValues.max ||
       this.radius < this.config.radiusClampValues.min
     )
-      this.config.vr *= -1;
+      this.config.vr = -this.config.vr;
   }
 
   public updateCanvas(width: number, height: number) {

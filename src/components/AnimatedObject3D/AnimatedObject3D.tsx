@@ -83,7 +83,7 @@ const AnimatedObject3D = ({
           model.rotateY(0.02);
           let rotation: THREE.Euler = model.rotation;
           if (rotation.y < 0.02 && rotation.y > 0) {
-            sv *= -1;
+            sv = -sv;
           }
 
           let scale: THREE.Vector3 = model.scale;
@@ -101,7 +101,7 @@ const AnimatedObject3D = ({
     return () => {
       cancelAnimationFrame(animationFrame);
     };
-  });
+  }, [canvasSize, modelPath, modelScale, scalingValue]);
 
   return <Canvas ref={canvasRef}></Canvas>;
 };

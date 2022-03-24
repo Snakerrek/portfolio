@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HomeCanvas from "../HomeCanvas/HomeCanvas";
 import Letter from "./Letter";
@@ -14,10 +14,15 @@ const Home = ({
   FFEconfig,
 }: homeSectionDataInterface): JSX.Element => {
   let d = delay.startingValue;
+  const [displayHomeCanvas, setDisplayHomeCanvas] = useState(true);
+
+  document.addEventListener("scroll", function (e) {
+    setDisplayHomeCanvas(window.scrollY < window.innerHeight);
+  });
 
   return (
     <HomeWrap>
-      <HomeCanvas FFEconfig={FFEconfig} />
+      {displayHomeCanvas && <HomeCanvas FFEconfig={FFEconfig} />}
       <TitleWrapper>
         <div>
           {splitStringToArrayOfChars(homeTextFirstLine).map((letter, index) => {

@@ -62,8 +62,8 @@ export const homeSectionData: homeSectionDataInterface = {
   },
   FFEconfig: {
     framesPerSecond: 60,
-    cellSize: Math.random() * (22 - 18) + 18,
-    lineWidth: Math.random() * (1.5 - 1) + 1,
+    cellSize: Math.random() * (21 - 19) + 19,
+    lineWidth: Math.random() * (1 - 0.75) + 0.75,
     vr: Math.random() * (0.0225 - 0.0175) + 0.0175,
     gradientColors: [
       {
@@ -351,7 +351,7 @@ export const contactData: contactDataInterface = {
     },
   ],
   backgroundCanvasConfig: {
-    particleDensity: 20,
+    particleDensity: 10,
     particleSize: { min: 3, max: 10 },
     particleColor: "#1C11A4",
     lineColor: "28,32,255",

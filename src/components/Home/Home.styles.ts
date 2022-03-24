@@ -13,6 +13,8 @@ export const TitleWrapper = styled.div`
 
 export const HomeWrap = styled.div`
   position: relative;
+  width: 100%;
+  height: 100vh;
 `;
 
 export const PatternInfo = styled.div`
