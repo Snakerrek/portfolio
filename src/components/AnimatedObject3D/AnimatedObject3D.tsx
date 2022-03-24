@@ -73,6 +73,8 @@ const AnimatedObject3D = ({
     renderer.setClearColor(0x0c0c0c);
     renderer.render(scene, camera);
 
+    let sv = scalingValue;
+
     const animate = (timeStamp: DOMHighResTimeStamp) => {
       const deltaTime = timeStamp - lastTime;
       lastTime = timeStamp;
@@ -81,15 +83,11 @@ const AnimatedObject3D = ({
           model.rotateY(0.02);
           let rotation: THREE.Euler = model.rotation;
           if (rotation.y < 0.02 && rotation.y > 0) {
-            scalingValue *= -1;
+            sv *= -1;
           }
 
           let scale: THREE.Vector3 = model.scale;
-          model.scale.set(
-            scale.x + scalingValue,
-            scale.y + scalingValue,
-            scale.z + scalingValue
-          );
+          model.scale.set(scale.x + sv, scale.y + sv, scale.z + sv);
         }
         renderer.render(scene, camera);
         timer = 0;
