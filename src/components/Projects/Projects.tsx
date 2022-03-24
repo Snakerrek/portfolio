@@ -31,7 +31,13 @@ const Projects = ({
         />
         <ProjectsWrapper>
           {filteredProjects.map((project, id) => {
-            return <ProjectCard key={id} {...project} />;
+            return (
+              <ProjectCard
+                key={id}
+                project={project}
+                setActiveTechnology={setActiveTechnology}
+              />
+            );
           })}
         </ProjectsWrapper>
       </>

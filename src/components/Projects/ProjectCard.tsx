@@ -8,26 +8,30 @@ import {
 
 import { projectsDataInterface } from "../../interfaces";
 
-const ProjectCard = ({
-  projectImgPath,
-  projectTitle,
-  projectDescription,
-  projectTechnology,
-  projectTechnologyIcons,
-}: projectsDataInterface): JSX.Element => {
-  const altText: string = `Background image for ${projectTitle} project.`;
+type Props = {
+  project: projectsDataInterface;
+  setActiveTechnology: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const ProjectCard = ({ project, setActiveTechnology }: Props): JSX.Element => {
+  const altText: string = `Background image for ${project.projectTitle} project.`;
   return (
     <ProjectCardWrapper>
-      <h3>{projectTitle}</h3>
+      <h3>{project.projectTitle}</h3>
       <div>
         <ProjectCardImg
-          src={require(`../../assets/projects/${projectImgPath}.png`)}
+          src={require(`../../assets/projects/${project.projectImgPath}.png`)}
           alt={altText}
         />
       </div>
       <ProjectTechnologyHolder>
-        {projectTechnologyIcons.map((TechIcon, id) => {
-          return <TechIcon key={id} />;
+        {project.projectTechnology.map((tech, id) => {
+          return (
+            <tech.icon
+              key={id}
+              onClick={() => setActiveTechnology(tech.name)}
+            />
+          );
         })}
       </ProjectTechnologyHolder>
     </ProjectCardWrapper>

@@ -16,9 +16,15 @@ const ProjectFilter = ({
       setFilteredProjects(projects);
       return;
     }
-    const filtered = projects.filter((project) =>
-      project.projectTechnology.includes(activeTechnology)
-    );
+    const filtered = projects.filter((project) => {
+      // Room for improvement
+      for (let i = 0; i < project.projectTechnology.length; i++) {
+        if (project.projectTechnology[i].name === activeTechnology) {
+          return true;
+        }
+      }
+      return false;
+    });
     setFilteredProjects(filtered);
   }, [projects, activeTechnology, setFilteredProjects]);
 

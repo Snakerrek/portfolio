@@ -52,8 +52,7 @@ export interface projectsDataInterface {
   projectGitHubLink: string;
   projectTitle: string;
   projectDescription: string;
-  projectTechnology: string[];
-  projectTechnologyIcons: IconType[];
+  projectTechnology: { name: string; icon: IconType }[];
 }
 
 export interface projectFilterInterface {

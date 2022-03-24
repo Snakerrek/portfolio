@@ -129,6 +129,11 @@ export const skillsData: skillsDataInterface[] = [
     backgroundColors: { top: "#181C20", bottom: "#000000" },
   },
   {
+    skillName: "html",
+    stageOfAdvancement: "Good knowledge",
+    backgroundColors: { top: "#F08129", bottom: "#E75726" },
+  },
+  {
     skillName: "css",
     stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#205493", bottom: "#093061" },
@@ -139,11 +144,6 @@ export const skillsData: skillsDataInterface[] = [
     backgroundColors: { top: "#672079", bottom: "#472C73" },
   },
   {
-    skillName: "html",
-    stageOfAdvancement: "Good knowledge",
-    backgroundColors: { top: "#F08129", bottom: "#E75726" },
-  },
-  {
     skillName: "c-sharp",
     stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#672079", bottom: "#472C73" },
@@ -152,6 +152,11 @@ export const skillsData: skillsDataInterface[] = [
     skillName: "unity",
     stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#181C20", bottom: "#000000" },
+  },
+  {
+    skillName: "git",
+    stageOfAdvancement: "Good knowledge",
+    backgroundColors: { top: "#F08129", bottom: "#E75726" },
   },
   {
     skillName: "android",
@@ -193,20 +198,12 @@ export const projectsData: projectsDataInterface[] = [
     projectTitle: "Portfolio website",
     projectDescription: "",
     projectTechnology: [
-      "html",
-      "css",
-      "ts",
-      "react",
-      "styled-components",
-      "three-js",
-    ],
-    projectTechnologyIcons: [
-      SiHtml5,
-      SiCss3,
-      SiTypescript,
-      SiReact,
-      SiStyledcomponents,
-      SiThreedotjs,
+      { name: "html", icon: SiHtml5 },
+      { name: "css", icon: SiCss3 },
+      { name: "ts", icon: SiTypescript },
+      { name: "react", icon: SiReact },
+      { name: "styled-components", icon: SiStyledcomponents },
+      { name: "three-js", icon: SiThreedotjs },
     ],
   },
   {
@@ -216,13 +213,12 @@ export const projectsData: projectsDataInterface[] = [
     projectTitle: "Project tracker",
     projectDescription:
       "Single-page react application that helps you track progress of your projects.",
-    projectTechnology: ["html", "css", "js", "react", "styled-components"],
-    projectTechnologyIcons: [
-      SiHtml5,
-      SiCss3,
-      SiJavascript,
-      SiReact,
-      SiStyledcomponents,
+    projectTechnology: [
+      { name: "html", icon: SiHtml5 },
+      { name: "css", icon: SiCss3 },
+      { name: "js", icon: SiJavascript },
+      { name: "react", icon: SiReact },
+      { name: "styled-components", icon: SiStyledcomponents },
     ],
   },
   {
@@ -231,8 +227,12 @@ export const projectsData: projectsDataInterface[] = [
     projectGitHubLink: "https://github.com/Snakerrek/coffee-website",
     projectTitle: "Coffee lovers",
     projectDescription: "Single-page website for coffee lovers.",
-    projectTechnology: ["html", "css", "js", "bootstrap"],
-    projectTechnologyIcons: [SiHtml5, SiCss3, SiJavascript, SiBootstrap],
+    projectTechnology: [
+      { name: "html", icon: SiHtml5 },
+      { name: "css", icon: SiCss3 },
+      { name: "js", icon: SiJavascript },
+      { name: "bootstrap", icon: SiBootstrap },
+    ],
   },
   {
     projectImgPath: "stacja-diagnostyczna",
@@ -241,8 +241,11 @@ export const projectsData: projectsDataInterface[] = [
     projectTitle: "Stacja diagnostyczna",
     projectDescription:
       "A commercial application for vehicle inspection station.",
-    projectTechnology: ["html", "css", "js"],
-    projectTechnologyIcons: [SiHtml5, SiCss3, SiJavascript],
+    projectTechnology: [
+      { name: "html", icon: SiHtml5 },
+      { name: "css", icon: SiCss3 },
+      { name: "js", icon: SiJavascript },
+    ],
   },
   {
     projectImgPath: "word-counter",
@@ -251,8 +254,11 @@ export const projectsData: projectsDataInterface[] = [
     projectTitle: "Word counter",
     projectDescription:
       "The application breaks down the given text into characters, words, sentences and paragraphs. Gives also approximate time of read.",
-    projectTechnology: ["html", "css", "js"],
-    projectTechnologyIcons: [SiHtml5, SiCss3, SiJavascript],
+    projectTechnology: [
+      { name: "html", icon: SiHtml5 },
+      { name: "css", icon: SiCss3 },
+      { name: "js", icon: SiJavascript },
+    ],
   },
   {
     projectImgPath: "password-generator",
@@ -261,8 +267,11 @@ export const projectsData: projectsDataInterface[] = [
     projectTitle: "Password generator",
     projectDescription:
       "The application generates passwords according to the parameters set by the user and can also check the password strength.",
-    projectTechnology: ["html", "css", "js"],
-    projectTechnologyIcons: [SiHtml5, SiCss3, SiJavascript],
+    projectTechnology: [
+      { name: "html", icon: SiHtml5 },
+      { name: "css", icon: SiCss3 },
+      { name: "js", icon: SiJavascript },
+    ],
   },
   {
     projectImgPath: "project-umbra",
@@ -271,8 +280,10 @@ export const projectsData: projectsDataInterface[] = [
     projectTitle: "Project Umbra",
     projectDescription:
       "2D space shooter with random world generation, enemies and much more.",
-    projectTechnology: ["c-sharp", "unity"],
-    projectTechnologyIcons: [SiCsharp, SiUnity],
+    projectTechnology: [
+      { name: "c-sharp", icon: SiCsharp },
+      { name: "unity", icon: SiUnity },
+    ],
   },
   {
     projectImgPath: "flappit",
@@ -282,8 +293,11 @@ export const projectsData: projectsDataInterface[] = [
     projectTitle: "Flappit",
     projectDescription:
       "Android game made in C# with Unity engine, simple arcade game based on original Flappy Bird.",
-    projectTechnology: ["c-sharp", "unity", "android"],
-    projectTechnologyIcons: [SiCsharp, SiUnity, SiAndroid],
+    projectTechnology: [
+      { name: "c-sharp", icon: SiCsharp },
+      { name: "unity", icon: SiUnity },
+      { name: "android", icon: SiAndroid },
+    ],
   },
   {
     projectImgPath: "spinning-shapes",
@@ -292,8 +306,11 @@ export const projectsData: projectsDataInterface[] = [
     projectGitHubLink: "https://github.com/Snakerrek/Spinning-Shapes",
     projectTitle: "Spinning Shapes",
     projectDescription: "Super Hexagon clone for Android.",
-    projectTechnology: ["c-sharp", "unity", "android"],
-    projectTechnologyIcons: [SiCsharp, SiUnity, SiAndroid],
+    projectTechnology: [
+      { name: "c-sharp", icon: SiCsharp },
+      { name: "unity", icon: SiUnity },
+      { name: "android", icon: SiAndroid },
+    ],
   },
   {
     projectImgPath: "voxel-world-generator",
@@ -302,8 +319,10 @@ export const projectsData: projectsDataInterface[] = [
     projectTitle: "Voxel world generator",
     projectDescription:
       "Unity application that generates random voxel worlds (built with cube blocks).",
-    projectTechnology: ["c-sharp", "unity"],
-    projectTechnologyIcons: [SiCsharp, SiUnity],
+    projectTechnology: [
+      { name: "c-sharp", icon: SiCsharp },
+      { name: "unity", icon: SiUnity },
+    ],
   },
 ];
 
