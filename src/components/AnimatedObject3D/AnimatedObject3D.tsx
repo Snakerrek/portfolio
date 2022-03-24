@@ -8,12 +8,14 @@ interface Props {
   modelPath: string;
   canvasSize: { x: number; y: number };
   modelScale: { x: number; y: number; z: number };
+  scalingValue: number;
 }
 
 const AnimatedObject3D = ({
   modelPath,
   canvasSize,
   modelScale,
+  scalingValue,
 }: Props): JSX.Element => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -70,8 +72,6 @@ const AnimatedObject3D = ({
     renderer.shadowMap.enabled = true;
     renderer.setClearColor(0x0c0c0c);
     renderer.render(scene, camera);
-
-    let scalingValue = -0.0001;
 
     const animate = (timeStamp: DOMHighResTimeStamp) => {
       const deltaTime = timeStamp - lastTime;

@@ -32,6 +32,7 @@ export interface aboutMeSectionDataInterface {
   aboutMeText: string[];
   object3Dconfig: {
     scale: number;
+    scalingValue: number;
     modelPath: string;
   };
 }

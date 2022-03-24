@@ -43,6 +43,7 @@ const About = ({
             y: object3Dconfig.scale,
             z: object3Dconfig.scale,
           }}
+          scalingValue={object3Dconfig.scalingValue}
         />
       </ContentWrapper>
     </SectionWrapper>
