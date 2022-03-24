@@ -20,7 +20,7 @@ const ProjectCard = ({ project, setActiveTechnology }: Props): JSX.Element => {
       <h3>{project.projectTitle}</h3>
       <div>
         <ProjectCardImg
-          src={require(`../../assets/projects/${project.projectImgPath}.png`)}
+          src={require(`../../assets/projects/${project.projectImgPath}.webp`)}
           alt={altText}
         />
       </div>

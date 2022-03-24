@@ -17,7 +17,7 @@ const SkillCard = ({
         </h3>
       </AdvancementTextContainer>
       <img
-        src={require(`../../assets/skills/${skillName}.png`)}
+        src={require(`../../assets/skills/${skillName}.webp`)}
         alt={`${skillName} logo`}
       ></img>
     </Card>

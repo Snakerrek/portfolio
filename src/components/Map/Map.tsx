@@ -1,6 +1,6 @@
 import React from "react";
 
-import mapImage from "../../assets/map-image.png";
+import mapImage from "../../assets/map-image.webp";
 import { MapWrapper, MapCard, CardHeading, PText } from "./Map.styles";
 
 const Map = (): JSX.Element => {
