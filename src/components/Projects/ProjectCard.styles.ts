@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const ProjectCardWrapper = styled.div`
+  cursor: default;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   max-width: 800px;
   text-align: center;
   flex: 1 1 400px;
-  margin: 5px;
+  margin: 15px;
+  transition: 0.3s ease;
 
   border: double 4px transparent;
   border-radius: 15px;
@@ -20,7 +22,12 @@ export const ProjectCardWrapper = styled.div`
 
   h3 {
     margin: 10px;
-    color: var(--lightBlue);
+    color: var(--white);
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale3d(1.03, 1.03, 1.03);
   }
 `;
 
@@ -41,5 +48,10 @@ export const ProjectTechnologyHolder = styled.div`
   height: 50px;
   padding: 10px;
   font-size: var(--fontBig);
-  color: var(--lightBlue);
+  color: var(--white);
+
+  & svg:hover {
+    color: var(--lightBlue);
+    cursor: pointer;
+  }
 `;
