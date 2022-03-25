@@ -13,6 +13,7 @@ import {
 import NavbarSocialMediaLinks from "./NavbarSocialMediaLinks";
 
 import { navbarDataInterface } from "../../interfaces";
+import { isOnMobile } from "../../helpers";
 
 type Props = {
   navbarData: navbarDataInterface[];
@@ -31,7 +32,7 @@ const Navbar = ({ navbarData }: Props): JSX.Element => {
   return (
     <NavigationBar>
       <NavbarList>
-        {windowWidth > 600 && <NavbarLogo />}
+        {windowWidth > 600 && !isOnMobile() && <NavbarLogo />}
         {navbarData.map((navbarItem) => (
           <NavbarListItem delayID={navbarItem.delayID} key={navbarItem.delayID}>
             <NavbarListItemLink href={navbarItem.link}>
@@ -42,7 +43,7 @@ const Navbar = ({ navbarData }: Props): JSX.Element => {
             </NavbarListItemLink>
           </NavbarListItem>
         ))}
-        {windowWidth > 600 && <NavbarSocialMediaLinks />}
+        {windowWidth > 600 && !isOnMobile() && <NavbarSocialMediaLinks />}
       </NavbarList>
     </NavigationBar>
   );

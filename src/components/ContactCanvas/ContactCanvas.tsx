@@ -155,7 +155,7 @@ const HomeCanvas = ({ backgroundCanvasConfig }: Props): JSX.Element => {
     animate();
 
     window.addEventListener("resize", () => {
-      if (isOnMobile()) return;
+      // if (isOnMobile()) return;
       canvas.width = canvasContainer.clientWidth;
       canvas.height = canvasContainer.clientHeight;
       init();
