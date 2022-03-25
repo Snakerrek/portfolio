@@ -10,9 +10,9 @@ export const GlobalStyle = createGlobalStyle`
     --mediumBlue: #1C20FF;
     --darkBlue: #1C11A4;
     
-    --fontHuge: 4rem;
-    --fontVeryBig: 3rem;
-    --fontBig: 2rem;
+    --fontHuge: 64px;
+    --fontVeryBig: 48px;
+    --fontBig: 24px;
     --fontMedium: 1.2rem;
     --fontSmall: 1rem;
     --fontExtraSmall: 0.8rem;
