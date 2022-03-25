@@ -351,7 +351,7 @@ export const contactData: contactDataInterface = {
     },
   ],
   backgroundCanvasConfig: {
-    particleDensity: 10,
+    particleDensity: 15,
     particleSize: { min: 3, max: 10 },
     particleColor: "#1C11A4",
     lineColor: "28,32,255",
