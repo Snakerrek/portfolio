@@ -159,6 +159,13 @@ const HomeCanvas = ({ FFEconfig }: Props): JSX.Element => {
       flowField.updateCanvas(window.innerWidth, window.innerHeight);
     });
 
+    // Just to be sure (^ is inefficient in about 20% entries)
+    window.onload = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      flowField.updateCanvas(window.innerWidth, window.innerHeight);
+    };
+
     let flowField: FlowFieldEffect = new FlowFieldEffect(
       FFEconfig,
       ctx,
