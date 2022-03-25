@@ -62,7 +62,7 @@ export const homeSectionData: homeSectionDataInterface = {
   },
   FFEconfig: {
     framesPerSecond: 60,
-    cellSize: Math.random() * (21 - 19) + 19,
+    cellSize: Math.random() * (20 - 18) + 18,
     lineWidth: Math.random() * (1 - 0.75) + 0.75,
     vr: Math.random() * (0.0225 - 0.0175) + 0.0175,
     gradientColors: [
