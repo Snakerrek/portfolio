@@ -153,6 +153,12 @@ const HomeCanvas = ({ FFEconfig }: Props): JSX.Element => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    document.addEventListener("DOMContentLoaded", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      flowField.updateCanvas(window.innerWidth, window.innerHeight);
+    });
+
     let flowField: FlowFieldEffect = new FlowFieldEffect(
       FFEconfig,
       ctx,
