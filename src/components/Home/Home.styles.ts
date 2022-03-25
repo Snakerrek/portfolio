@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TitleWrapper = styled.div`
   position: absolute;
-  top: 250px;
+  top: 30%;
 
   padding-left: 7rem;
   @media only screen and (max-width: 600px) {
