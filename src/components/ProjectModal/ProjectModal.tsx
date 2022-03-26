@@ -3,12 +3,14 @@ import ReactDOM from "react-dom";
 import Backdrop from "./Backdrop";
 import ProjectLinks from "./ProjectLinks";
 import ProjectTechnology from "./ProjectTechnology";
+import { AiFillCloseCircle } from "react-icons/ai";
 import {
   ProjectModalWrapper,
   Content,
   Title,
   MainContent,
   SubContent,
+  CloseIcon,
 } from "./ProjectModal.styles";
 import { projectsDataInterface } from "../../interfaces";
 
@@ -21,6 +23,16 @@ const showModal = {
     transition: { type: "spring", stiffness: 300 },
   },
   exit: { opacity: 0, scale: 0.5, transition: { duration: 0.6 } },
+};
+
+const showContent = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { delay: 0.5, duration: 0.5 } },
+};
+
+const showCloseButton = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { delay: 1, duration: 0.5 } },
 };
 
 type Props = {
@@ -41,10 +53,17 @@ const ProjectModal = ({ project, handleClose }: Props): JSX.Element => {
         exit="exit"
         bgImage={require(`../../assets/projects/${project.projectImgPath}.webp`)}
       >
-        <Content
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 0.5, duration: 0.5 } }}
+        <CloseIcon
+          onClick={() => handleClose()}
+          variants={showCloseButton}
+          initial="hidden"
+          animate="visible"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9, color: "red" }}
         >
+          <AiFillCloseCircle />
+        </CloseIcon>
+        <Content variants={showContent} initial="hidden" animate="visible">
           <Title>{project.projectTitle}</Title>
           <MainContent>
             <SubContent>

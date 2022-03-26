@@ -5,7 +5,16 @@ type WrapperProps = {
   bgImage: any;
 };
 
+export const CloseIcon = styled(motion.div)`
+  font-size: 30px;
+  position: absolute;
+  right: -5px;
+  top: -15px;
+  cursor: pointer;
+`;
+
 export const ProjectModalWrapper = styled(motion.div)<WrapperProps>`
+  position: relative;
   width: clamp(50%, 900px, 85%);
   min-height: 500px;
   margin-left: 5rem;
