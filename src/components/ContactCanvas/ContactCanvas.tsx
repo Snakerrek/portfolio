@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 
 import { CanvasDiv } from "./ContactCanvas.styles";
 
-import { isOnMobile } from "../../helpers";
 import { backgroundCanvasConfigInterface } from "../../interfaces";
 
 let config: backgroundCanvasConfigInterface;
@@ -155,7 +154,6 @@ const HomeCanvas = ({ backgroundCanvasConfig }: Props): JSX.Element => {
     animate();
 
     window.addEventListener("resize", () => {
-      // if (isOnMobile()) return;
       canvas.width = canvasContainer.clientWidth;
       canvas.height = canvasContainer.clientHeight;
       init();

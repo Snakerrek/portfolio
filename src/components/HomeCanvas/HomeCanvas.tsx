@@ -116,7 +116,7 @@ class FlowFieldEffect {
     const deltaTime = timeStamp - this.lastTime;
     this.lastTime = timeStamp;
     if (this.timer > this.interval) {
-      this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      this.ctx.clearRect(0, 0, this.width, this.height);
 
       this.updateRadius();
       this.drawGradient();
@@ -150,21 +150,18 @@ const HomeCanvas = ({ FFEconfig }: Props): JSX.Element => {
     const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    document.addEventListener("DOMContentLoaded", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      flowField.updateCanvas(window.innerWidth, window.innerHeight);
-    });
-
-    // Just to be sure (^ is inefficient in about 20% entries)
-    window.onload = () => {
+    const updateCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       flowField.updateCanvas(window.innerWidth, window.innerHeight);
     };
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    document.addEventListener("DOMContentLoaded", updateCanvas);
+    // Just to be sure (^ is inefficient in about 20% entries)
+    window.onload = updateCanvas;
 
     let flowField: FlowFieldEffect = new FlowFieldEffect(
       FFEconfig,
@@ -175,10 +172,16 @@ const HomeCanvas = ({ FFEconfig }: Props): JSX.Element => {
     flowField.animate(0);
 
     window.addEventListener("resize", function () {
-      if (isOnMobile()) return;
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      flowField.updateCanvas(window.innerWidth, window.innerHeight);
+      if (isOnMobile()) {
+        if (
+          Math.abs(this.window.innerHeight - canvas.height) > 200 ||
+          Math.abs(this.window.innerWidth - canvas.width) > 200
+        ) {
+          // updating after viewport orientation change
+          updateCanvas();
+        }
+      }
+      updateCanvas();
     });
 
     return () => {
