@@ -6,7 +6,7 @@ export const ProjectCardWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 800px;
+  max-width: 700px;
   text-align: center;
   flex: 1 1 400px;
   margin: 15px;
