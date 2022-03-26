@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import { ProjectsWrapper } from "./Projects.styles";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
@@ -29,16 +30,18 @@ const Projects = ({
           setActiveTechnology={setActiveTechnology}
           technologyNamesForFilter={technologyNamesForFilter}
         />
-        <ProjectsWrapper>
-          {filteredProjects.map((project, id) => {
-            return (
-              <ProjectCard
-                key={id}
-                project={project}
-                setActiveTechnology={setActiveTechnology}
-              />
-            );
-          })}
+        <ProjectsWrapper layout>
+          <AnimatePresence>
+            {filteredProjects.map((project, id) => {
+              return (
+                <ProjectCard
+                  key={id}
+                  project={project}
+                  setActiveTechnology={setActiveTechnology}
+                />
+              );
+            })}
+          </AnimatePresence>
         </ProjectsWrapper>
       </>
     </SectionWrapper>
