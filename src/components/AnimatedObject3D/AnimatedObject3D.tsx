@@ -65,12 +65,13 @@ const AnimatedObject3D = ({
 
     const renderer = new THREE.WebGL1Renderer({
       canvas: canvas,
+      alpha: true,
     });
 
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.shadowMap.enabled = true;
-    renderer.setClearColor(0x0c0c0c);
+    renderer.setClearColor(0x000000, 0);
     renderer.render(scene, camera);
 
     let sv = scalingValue;
