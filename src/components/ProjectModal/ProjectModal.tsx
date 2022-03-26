@@ -12,19 +12,15 @@ import {
 } from "./ProjectModal.styles";
 import { projectsDataInterface } from "../../interfaces";
 
-const dropIn = {
-  hidden: { y: "-100vh", opacity: 0 },
+const showModal = {
+  hidden: { opacity: 0, y: 60, scale: 0.5 },
   visible: {
-    y: "0",
     opacity: 1,
-    transition: {
-      duration: 0.1,
-      type: "spring",
-      damping: 100,
-      stiffness: 500,
-    },
+    y: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 300 },
   },
-  exit: { y: "100vh", opacity: 0 },
+  exit: { opacity: 0, scale: 0.5, transition: { duration: 0.6 } },
 };
 
 type Props = {
@@ -39,19 +35,15 @@ const ProjectModal = ({ project, handleClose }: Props): JSX.Element => {
     <Backdrop onClick={handleClose}>
       <ProjectModalWrapper
         onClick={(e) => e.stopPropagation()}
-        initial={{ opacity: 0, y: 60, scale: 0.5 }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          transition: { type: "spring", stiffness: 300 },
-        }}
-        exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.6 } }}
+        variants={showModal}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
         bgImage={require(`../../assets/projects/${project.projectImgPath}.webp`)}
       >
         <Content
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1, transition: { delay: 0.5 } }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: 0.5, duration: 0.5 } }}
         >
           <Title>{project.projectTitle}</Title>
           <MainContent>
