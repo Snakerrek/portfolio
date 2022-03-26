@@ -5,6 +5,10 @@ export const Technology = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 
+  @media screen and (max-width: 600px) {
+    flex-direction: row;
+  }
+
   p {
     margin: 0;
     font-size: var(--fontBig);

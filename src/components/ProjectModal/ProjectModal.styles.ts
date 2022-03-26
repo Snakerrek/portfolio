@@ -17,6 +17,7 @@ export const ProjectModalWrapper = styled(motion.div)<WrapperProps>`
 
   @media screen and (max-width: 600px) {
     margin-left: 0;
+    min-height: 300px;
   }
 `;
 
@@ -30,6 +31,9 @@ export const Content = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 600px) {
+    min-height: 300px;
+  }
 `;
 
 export const Title = styled.div`
@@ -59,4 +63,10 @@ export const SubContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 600px) {
+    p {
+      font-size: 16px;
+    }
+  }
 `;
