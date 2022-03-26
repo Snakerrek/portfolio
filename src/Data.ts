@@ -358,3 +358,17 @@ export const contactData: contactDataInterface = {
     lineWidth: 2,
   },
 };
+
+export const technologyNamesMap = new Map();
+
+technologyNamesMap.set("js", "Javascript");
+technologyNamesMap.set("ts", "Typescript");
+technologyNamesMap.set("react", "React");
+technologyNamesMap.set("styled-components", "Styled-components");
+technologyNamesMap.set("html", "HTML");
+technologyNamesMap.set("css", "CSS");
+technologyNamesMap.set("bootstrap", "Boostrap");
+technologyNamesMap.set("c-sharp", "C#");
+technologyNamesMap.set("unity", "Unity");
+technologyNamesMap.set("android", "Android");
+technologyNamesMap.set("three-js", "Three.js");

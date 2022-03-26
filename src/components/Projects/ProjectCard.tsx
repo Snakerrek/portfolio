@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import ProjectModal from "../ProjectModal/ProjectModal";
+import { AnimatePresence } from "framer-motion";
 
 import {
   ProjectCardWrapper,
@@ -14,9 +16,18 @@ type Props = {
 };
 
 const ProjectCard = ({ project, setActiveTechnology }: Props): JSX.Element => {
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+
+  const handleClose = () => setModalOpen(false);
+  const handleOpen = () => setModalOpen(true);
+
   const altText: string = `Background image for ${project.projectTitle} project.`;
   return (
-    <ProjectCardWrapper>
+    <ProjectCardWrapper
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() => (modalOpen ? handleClose() : handleOpen())}
+    >
       <h3>{project.projectTitle}</h3>
       <div>
         <ProjectCardImg
@@ -34,6 +45,11 @@ const ProjectCard = ({ project, setActiveTechnology }: Props): JSX.Element => {
           );
         })}
       </ProjectTechnologyHolder>
+      <AnimatePresence initial={false} exitBeforeEnter={true}>
+        {modalOpen && (
+          <ProjectModal project={project} handleClose={handleClose} />
+        )}
+      </AnimatePresence>
     </ProjectCardWrapper>
   );
 };

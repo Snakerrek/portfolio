@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const ProjectCardWrapper = styled.div`
+export const ProjectCardWrapper = styled(motion.div)`
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -9,7 +10,6 @@ export const ProjectCardWrapper = styled.div`
   text-align: center;
   flex: 1 1 400px;
   margin: 15px;
-  transition: 0.3s ease;
 
   border: double 4px transparent;
   border-radius: 15px;
@@ -27,7 +27,6 @@ export const ProjectCardWrapper = styled.div`
 
   &:hover {
     cursor: pointer;
-    transform: scale3d(1.03, 1.03, 1.03);
   }
 `;
 
@@ -51,6 +50,7 @@ export const ProjectTechnologyHolder = styled.div`
   color: var(--white);
 
   & svg:hover {
+    transition: 0.3s ease;
     color: var(--lightBlue);
     cursor: pointer;
   }
