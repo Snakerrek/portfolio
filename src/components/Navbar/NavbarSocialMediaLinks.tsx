@@ -5,7 +5,6 @@ import { NavbarListItemLink } from "./NavbarListItemLink.styles";
 import { NavbarListItemIcon } from "./NavbarListItemLink.styles";
 
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { isOnMobile } from "../../helpers";
 
 const NavbarSocialMediaLinks = (): JSX.Element => {
   return (
