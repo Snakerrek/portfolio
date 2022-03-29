@@ -43,6 +43,14 @@ const AnimatedObject3D = ({
     light.position.set(2, 2, 5);
     scene.add(light);
 
+    const light2 = new THREE.DirectionalLight(0xffffff, 0.2);
+    light2.position.set(1, 2, 5);
+    scene.add(light2);
+
+    const light3 = new THREE.DirectionalLight(0xffffff, 0.2);
+    light3.position.set(3, 2, 5);
+    scene.add(light3);
+
     let animationFrame: number;
 
     let lastTime = 0;
@@ -57,7 +65,7 @@ const AnimatedObject3D = ({
     const camera = new THREE.PerspectiveCamera(
       75,
       sizes.width / sizes.height,
-      0.1,
+      0.2,
       100
     );
     camera.position.set(0, 1, 2);

@@ -107,9 +107,9 @@ export const aboutMeSectionData: aboutMeSectionDataInterface = {
     `Programming is my biggest passion, but not the only one, I love to spend my free time reading books and playing games (especially fantasy/sci-fi genres are close to my heart).`,
   ],
   object3Dconfig: {
-    scale: 0.2,
+    scale: 0.4,
     scalingValue: -0.0005,
-    modelPath: "/pumpkin.glb",
+    modelPath: "/me.glb",
   },
 };
 
