@@ -197,7 +197,12 @@ export const projectsData: projectsDataInterface[] = [
     projectLiveLink: "#",
     projectGitHubLink: "https://github.com/Snakerrek/portfolio",
     projectTitle: "Portfolio website",
-    projectDescription: "",
+    projectDescription: `This is the page you are currently on. 
+    It was created using HTML, CSS, React, Typescript, Styled Components, and Three.js. 
+    The homepage and contact page were created using HTML Canvas. 
+    The 3D object is rendered using Three.js library. 
+    Part of the animation was done using pure CSS and part using Framer-motion library. 
+    E-mail contact is realized through EmailJS API.`,
     projectTechnology: [
       { name: "html", icon: SiHtml5 },
       { name: "css", icon: SiCss3 },
