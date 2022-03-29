@@ -28,7 +28,11 @@ const About = ({
   });
 
   return (
-    <SectionWrapper title={title} scrollDown={true} background="#081c4c">
+    <SectionWrapper
+      title={title}
+      scrollDown={true}
+      background="linear-gradient(rgba(8,28,76,1) 0%, rgba(12,12,12,1) 100%)"
+    >
       <div className="shape-blob"></div>
       <div className="shape-blob one"></div>
       <div className="shape-blob two"></div>
