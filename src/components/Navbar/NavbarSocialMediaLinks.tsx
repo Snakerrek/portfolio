@@ -5,17 +5,26 @@ import { NavbarListItemLink } from "./NavbarListItemLink.styles";
 import { NavbarListItemIcon } from "./NavbarListItemLink.styles";
 
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { isOnMobile } from "../../helpers";
 
 const NavbarSocialMediaLinks = (): JSX.Element => {
   return (
     <NavbarListItem delayID={5}>
-      <NavbarListItemLink href="https://www.linkedin.com/in/tomaszkraszewski">
+      <NavbarListItemLink
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/tomaszkraszewski"
+      >
         <NavbarListItemIcon>
           <FaLinkedinIn />
         </NavbarListItemIcon>
         <span>LinkedIn</span>
       </NavbarListItemLink>
-      <NavbarListItemLink href="https://github.com/Snakerrek">
+      <NavbarListItemLink
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/Snakerrek"
+      >
         <NavbarListItemIcon>
           <FaGithub />
         </NavbarListItemIcon>
