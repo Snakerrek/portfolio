@@ -39,17 +39,12 @@ const AnimatedObject3D = ({
       }
     );
 
-    const light = new THREE.DirectionalLight(0xffffff, 1);
+    const light = new THREE.DirectionalLight(0xffffff, 0.7);
     light.position.set(2, 2, 5);
     scene.add(light);
 
-    const light2 = new THREE.DirectionalLight(0xffffff, 0.2);
-    light2.position.set(1, 2, 5);
-    scene.add(light2);
-
-    const light3 = new THREE.DirectionalLight(0xffffff, 0.2);
-    light3.position.set(3, 2, 5);
-    scene.add(light3);
+    const lightAmbient = new THREE.AmbientLight(0x404040); // soft white light
+    scene.add(lightAmbient);
 
     let animationFrame: number;
 
