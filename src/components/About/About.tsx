@@ -28,7 +28,10 @@ const About = ({
   });
 
   return (
-    <SectionWrapper title={title} scrollDown={true}>
+    <SectionWrapper title={title} scrollDown={true} background="#081c4c">
+      <div className="shape-blob"></div>
+      <div className="shape-blob one"></div>
+      <div className="shape-blob two"></div>
       <ContentWrapper>
         <TextHolder>
           {aboutMeText.map((paragraph, index) => {

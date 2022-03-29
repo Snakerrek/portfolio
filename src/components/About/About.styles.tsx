@@ -10,6 +10,7 @@ export const ContentWrapper = styled.div`
 `;
 
 export const TextHolder = styled.div`
+  z-index: 10;
   max-width: 600px;
   width: 400px;
   padding: 1rem;

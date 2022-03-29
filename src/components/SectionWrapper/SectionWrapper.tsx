@@ -8,11 +8,12 @@ type Props = {
   title: string;
   children: JSX.Element | JSX.Element[];
   scrollDown: boolean;
+  background?: string;
 };
 
-const SectionWrapper = ({ title, children, scrollDown }: Props) => {
+const SectionWrapper = ({ title, children, scrollDown, background }: Props) => {
   return (
-    <Wrapper>
+    <Wrapper background={background}>
       <TitleHolder>
         <h2>{title}</h2>
       </TitleHolder>
