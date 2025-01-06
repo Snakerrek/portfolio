@@ -114,9 +114,9 @@ export const aboutMeSectionData: aboutMeSectionDataInterface = {
 
 export const skillsData: skillsDataInterface[] = [
   {
-    skillName: "js",
+    skillName: "react",
     stageOfAdvancement: "Good knowledge",
-    backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" },
+    backgroundColors: { top: "#181C20", bottom: "#000000" },
   },
   {
     skillName: "ts",
@@ -124,9 +124,9 @@ export const skillsData: skillsDataInterface[] = [
     backgroundColors: { top: "#205493", bottom: "#093061" },
   },
   {
-    skillName: "react",
+    skillName: "js",
     stageOfAdvancement: "Good knowledge",
-    backgroundColors: { top: "#181C20", bottom: "#000000" },
+    backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" },
   },
   {
     skillName: "html",
@@ -144,14 +144,14 @@ export const skillsData: skillsDataInterface[] = [
     backgroundColors: { top: "#672079", bottom: "#472C73" },
   },
   {
-    skillName: "c-sharp",
-    stageOfAdvancement: "Good knowledge",
-    backgroundColors: { top: "#672079", bottom: "#472C73" },
-  },
-  {
     skillName: "unity",
     stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#181C20", bottom: "#000000" },
+  },
+  {
+    skillName: "c-sharp",
+    stageOfAdvancement: "Good knowledge",
+    backgroundColors: { top: "#672079", bottom: "#472C73" },
   },
   {
     skillName: "git",
