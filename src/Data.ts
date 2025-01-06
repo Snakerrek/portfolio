@@ -55,7 +55,7 @@ export const navbarData: navbarDataInterface[] = [
 
 export const homeSectionData: homeSectionDataInterface = {
   homeTextFirstLine: "Hi, I'm Tomasz",
-  homeTextSecondLine: "Front-end Developer",
+  homeTextSecondLine: "Full-stack Developer",
   delay: {
     startingValue: 500,
     incrementFactor: 100,
