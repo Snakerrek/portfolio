@@ -100,9 +100,8 @@ export const homeSectionData: homeSectionDataInterface = {
 export const aboutMeSectionData: aboutMeSectionDataInterface = {
   title: "About me",
   aboutMeText: [
-    `I'm ${
-      currentYear - 1999
-    } years old Computer Science student at Politechnika Częstochowska. `,
+    `I’m a Full-stack developer at ISO Gruppe, where I work on applications with reservation systems for clients such as Legoland, YelloSun, and various travel agencies. `,
+    `I hold an engineering degree and am currently pursuing a master’s degree in Computer Science at WSB Merito.`,
     `I started my adventure with programming by creating games using the unity engine, then I tried my hand at creating websites and web applications. In a short time, I discovered that this is something I'm truly fascinated with. Every day I try to become better than the day before.`,
     `Programming is my biggest passion, but not the only one, I love to spend my free time reading books and playing games (especially fantasy/sci-fi genres are close to my heart).`,
   ],
