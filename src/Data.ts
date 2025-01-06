@@ -128,6 +128,16 @@ export const skillsData: skillsDataInterface[] = [
     backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" },
   },
   {
+    skillName: "java",
+    stageOfAdvancement: "Good knowledge",
+    backgroundColors: { top: "#F08129", bottom: "#E75726" },
+  },
+  {
+    skillName: "spring",
+    stageOfAdvancement: "Good knowledge",
+    backgroundColors: { top: "#7fa013", bottom: "#526b00" },
+  },
+  {
     skillName: "html",
     stageOfAdvancement: "Expert knowledge",
     backgroundColors: { top: "#F08129", bottom: "#E75726" },
@@ -141,6 +151,16 @@ export const skillsData: skillsDataInterface[] = [
     skillName: "bootstrap",
     stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#672079", bottom: "#472C73" },
+  },
+  {
+    skillName: "nodejs",
+    stageOfAdvancement: "Basic knowledge",
+    backgroundColors: { top: "#7fa013", bottom: "#526b00" },
+  },
+  {
+    skillName: "mongodb",
+    stageOfAdvancement: "Basic knowledge",
+    backgroundColors: { top: "#7fa013", bottom: "#526b00" },
   },
   {
     skillName: "unity",
@@ -171,11 +191,6 @@ export const skillsData: skillsDataInterface[] = [
     skillName: "three-js",
     stageOfAdvancement: "Basic knowledge",
     backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" },
-  },
-  {
-    skillName: "java",
-    stageOfAdvancement: "Good knowledge",
-    backgroundColors: { top: "#F08129", bottom: "#E75726" },
   },
 ];
 
@@ -409,3 +424,6 @@ technologyNamesMap.set("unity", "Unity");
 technologyNamesMap.set("android", "Android");
 technologyNamesMap.set("three-js", "Three.js");
 technologyNamesMap.set("java", "Java");
+technologyNamesMap.set("spring", "Spring");
+technologyNamesMap.set("nodejs", "NodeJS");
+technologyNamesMap.set("mongodb", "MongoDB");
