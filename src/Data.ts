@@ -10,6 +10,8 @@ import {
   SiCsharp,
   SiUnity,
   SiAndroid,
+  SiNodedotjs,
+  SiMongodb
 } from "react-icons/si";
 
 import { MdPlace, MdMail } from "react-icons/md";
@@ -210,6 +212,23 @@ export const technologyNamesForFilter: string[] = [
 ];
 
 export const projectsData: projectsDataInterface[] = [
+  {
+    projectImgPath: "book-app",
+    projectLiveLink: "",
+    projectGitHubLink: "https://github.com/Snakerrek/book-app",
+    projectTitle: "Book App",
+    projectDescription: `This application is similar to Goodreads, essentially functioning as a social platform for book readers. 
+    I developed it as part of my engineering thesis. It was built using React, TypeScript, Node.js, and MongoDB.`,
+    projectTechnology: [
+      { name: "html", icon: SiHtml5 },
+      { name: "css", icon: SiCss3 },
+      { name: "ts", icon: SiTypescript },
+      { name: "react", icon: SiReact },
+      { name: "styled-components", icon: SiStyledcomponents },
+      { name: "node-js", icon: SiNodedotjs },
+      { name: "mongo-db", icon: SiMongodb },
+    ],
+  },
   {
     projectImgPath: "portfolio-website",
     projectLiveLink: "#",
