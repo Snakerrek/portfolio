@@ -114,32 +114,32 @@ export const aboutMeSectionData: aboutMeSectionDataInterface = {
 export const skillsData: skillsDataInterface[] = [
   {
     skillName: "react",
-    stageOfAdvancement: "Good knowledge",
+    stageOfAdvancement: "Expert knowledge",
     backgroundColors: { top: "#181C20", bottom: "#000000" },
   },
   {
     skillName: "ts",
-    stageOfAdvancement: "Good knowledge",
+    stageOfAdvancement: "Expert knowledge",
     backgroundColors: { top: "#205493", bottom: "#093061" },
   },
   {
     skillName: "js",
-    stageOfAdvancement: "Good knowledge",
+    stageOfAdvancement: "Expert knowledge",
     backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" },
   },
   {
     skillName: "html",
-    stageOfAdvancement: "Good knowledge",
+    stageOfAdvancement: "Expert knowledge",
     backgroundColors: { top: "#F08129", bottom: "#E75726" },
   },
   {
     skillName: "css",
-    stageOfAdvancement: "Good knowledge",
+    stageOfAdvancement: "Expert knowledge",
     backgroundColors: { top: "#205493", bottom: "#093061" },
   },
   {
     skillName: "bootstrap",
-    stageOfAdvancement: "Basic knowledge",
+    stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#672079", bottom: "#472C73" },
   },
   {
@@ -171,6 +171,11 @@ export const skillsData: skillsDataInterface[] = [
     skillName: "three-js",
     stageOfAdvancement: "Basic knowledge",
     backgroundColors: { top: "#ffeb59", bottom: "#e5c10b" },
+  },
+  {
+    skillName: "java",
+    stageOfAdvancement: "Good knowledge",
+    backgroundColors: { top: "#F08129", bottom: "#E75726" },
   },
 ];
 
@@ -403,3 +408,4 @@ technologyNamesMap.set("c-sharp", "C#");
 technologyNamesMap.set("unity", "Unity");
 technologyNamesMap.set("android", "Android");
 technologyNamesMap.set("three-js", "Three.js");
+technologyNamesMap.set("java", "Java");
