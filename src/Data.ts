@@ -27,7 +27,6 @@ import {
   contactDataInterface,
 } from "./interfaces";
 
-const currentYear = new Date().getFullYear();
 const gradientColorsArray = [
   "#F92CB0",
   "#1E3BFE",
