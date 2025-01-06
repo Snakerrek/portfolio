@@ -225,8 +225,8 @@ export const projectsData: projectsDataInterface[] = [
       { name: "ts", icon: SiTypescript },
       { name: "react", icon: SiReact },
       { name: "styled-components", icon: SiStyledcomponents },
-      { name: "node-js", icon: SiNodedotjs },
-      { name: "mongo-db", icon: SiMongodb },
+      { name: "nodejs", icon: SiNodedotjs },
+      { name: "mongodb", icon: SiMongodb },
     ],
   },
   {
