@@ -158,11 +158,6 @@ export const skillsData: skillsDataInterface[] = [
     backgroundColors: { top: "#7fa013", bottom: "#526b00" },
   },
   {
-    skillName: "mongodb",
-    stageOfAdvancement: "Basic knowledge",
-    backgroundColors: { top: "#7fa013", bottom: "#526b00" },
-  },
-  {
     skillName: "unity",
     stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#181C20", bottom: "#000000" },
@@ -171,6 +166,11 @@ export const skillsData: skillsDataInterface[] = [
     skillName: "c-sharp",
     stageOfAdvancement: "Good knowledge",
     backgroundColors: { top: "#672079", bottom: "#472C73" },
+  },
+  {
+    skillName: "mongodb",
+    stageOfAdvancement: "Basic knowledge",
+    backgroundColors: { top: "#7fa013", bottom: "#526b00" },
   },
   {
     skillName: "git",
